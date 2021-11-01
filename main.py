@@ -13,13 +13,12 @@ EP5_LEN = 10 #ep5 cable meters
 FAN_OUT_3_LEGS = 3 #cable breakout for 3 biamp legs
 FAN_OUT_6_LEGS = 6 #cable breakout for 6 oneamp legs
 
-def get_data_pdf():
-    filepath = input("Input path to pdf file to scan? \n")
-    # filepath = 'SetupData/Main_Setup.pdf'
+def get_data_pdf(filepath):
+
     template_path = 'Main_Setup.tabula-template.json'
     df = read_pdf_with_template (filepath,
-    template_path, 
-    pandas_options={'header':None})
+                                template_path,
+                                pandas_options={'header':None})
 
     for t in df:
         print(t)
@@ -37,11 +36,6 @@ def get_data_pdf():
 
     num_speakers_total = int(df[1][3][1]) + int(df[1][3][2]) + int(df[1][3][3])
 
-    speaker_total = []
-    for i in range(1,4):
-        if int(df[1][3][i]) > 0:
-            speaker_total.append(df[1][2][i].split(" ")[-1][0:-1] + " ")
-
     speakers = {}
     for i in range(1,4):
         speakers[(df[1][2][i].split(" ")[-1][0:-1])] = int(df[1][3][i])
@@ -54,9 +48,11 @@ def get_data_pdf():
         print('no J in speakers')
 
     links = df[3][7].isna().sum()
+
     all_linked = False
-    if num_speakers_total / links == 2:
-        all_linked = True
+    if links != 0:
+        if num_speakers_total / links == 2:
+            all_linked = True
 
     anchors = []
     with open('anchors.csv', newline='') as csvfile:
@@ -75,12 +71,37 @@ def get_data_pdf():
     print("num speakers total", num_speakers_total)
     return data
 
+
+def get_lines(data):
+    biamp_lines, one_amp_lines = 0, 0
+    for speaker in data['Speaker']:
+        if speaker == 'J-SUB':
+            biamp_lines += data['Speaker']['J-SUB']
+        if speaker == 'J-Top':
+            biamp_lines += data['Speaker']["J-Top"] - data['Links']
+        else:
+            one_amp_lines += data['Speaker'][speaker] - data['Links']
+    return biamp_lines, one_amp_lines
+
+
+def calculate_soca(biamp_lines, one_amp_lines):
+    assert (biamp_lines != one_amp_lines)
+
+    if biamp_lines > one_amp_lines:
+        soca_lines = int(biamp_lines / FAN_OUT_3_LEGS)
+        biamp_lines -= soca_lines * FAN_OUT_3_LEGS
+        num_lines = {'Soca':soca_lines, 'EP5':biamp_lines, 'Calamary':soca_lines, 'Octopus':0}
+    else:
+        soca_lines = int(one_amp_lines/FAN_OUT_6_LEGS)
+        one_amp_lines -= soca_lines * FAN_OUT_6_LEGS
+        num_lines = {'Soca':soca_lines, 'EP5':one_amp_lines, 'Calamary':0, 'Octopus':soca_lines}
+    return num_lines
+
+
 def get_data_manual():
-    data = {}
     hang = list(map(float, input("Enter hang position with spaces between x y z\n").split()))
     num_anchors = input("Enter num of anchor points in cable trace.")
     anchors = []
-    amp_position = [0., 0., 0.]
     for i in range(num_anchors):
         anchor = list(map(float, input("Enter anchor point for cable trace in x y z\n").split()))
         anchors.append(anchor)
@@ -97,108 +118,73 @@ def get_data_manual():
     return data
 
 
-def get_cable_number(data):
-    # default amp position under center stage
-    # 4 back to wall + 13.5 up the ceiling
-
-    hang = data['Hang']  # parsing data to variables
-    speakers = data['Speaker']
-    num_speakers = data['Num_speakers']
-    anchors = data['Anchors']
-    distance_to_hang = get_distance_to_hang(hang, anchors)
-    num_6legged_fanouts, num_3legged_fanouts = 0, 0
-    num_soca_cables_total, num_ep5_cables_total = 0, 0
-
-    for speaker in speakers.keys():
-        if speaker == "J-SUB":
-            num_3legged_fanouts, num_ep5_lines, num_soca_lines = get_subs_lines(speakers[speaker])
-        elif speaker == "J-Top":
-            num_3legged_fanouts, num_ep5_lines, num_soca_lines = get_Jtop_lines(data, speakers[speaker])
-        else:
-            print("presuming one channel speakers")
-            num_6legged_fanouts, num_ep5_lines, num_soca_lines = get_oneamp_lines(data, num_speakers)
-
-    if num_soca_lines > 0:
-        num_soca_cables_inline = 1
-        while distance_to_hang > SOCA_LEN * num_soca_cables_inline:
-            num_soca_cables_inline += 1
-        num_soca_cables_total = num_soca_cables_inline * num_soca_lines
-
-    if num_ep5_lines > 0:
-        num_ep5_cables_inline = 1
-        while distance_to_hang > EP5_LEN * num_ep5_cables_inline:
-            num_ep5_cables_inline += 1
-        num_ep5_cables_total = num_ep5_cables_inline * num_ep5_lines
-
-    print("\nType of speaker", speaker, "\nDistance to speaker", distance_to_hang, "\nNumber of speakers", num_speakers,
-          "\nAmp position", anchors[0])
-    print("Hang", data['Hang'])
-    print('Anchors')
-
-    for anchor in anchors:
-        if anchor != anchors[0]:
-            print(anchor)
-    print("Soca", num_soca_cables_total, "\nEP5", num_ep5_cables_total,
-          "\n3 legged fanouts", num_3legged_fanouts, "\n6 legged fanouts", num_6legged_fanouts)
-    print("Soca lines", num_soca_lines)
-    print("EP5 lines", num_ep5_lines)
-    num_cables_total = {"EP5": num_ep5_cables_total,"Soca": num_soca_cables_total, "ThreeLegFanOut":num_3legged_fanouts,
-                        "SixLegFanOut": num_6legged_fanouts, "Distance": distance_to_hang, "NumSpeakers": num_speakers,
-                        "TypeSpeakers": speaker}
-    return num_cables_total
-
-
-def get_oneamp_lines(data, num_speakers):
-    if data['All_linked'] == True:
-        num_soca_lines = int(num_speakers / 2 / FAN_OUT_6_LEGS)
-        num_ep5_lines = num_speakers / 2 - (num_soca_lines * FAN_OUT_3_LEGS)
-    elif data['All_linked'] == False:
-        num_soca_lines = int(num_speakers / FAN_OUT_6_LEGS)
-        num_ep5_lines = num_speakers - (num_soca_lines * FAN_OUT_3_LEGS)
-    num_6legged_fanouts = num_soca_lines
-    return num_6legged_fanouts, num_ep5_lines, num_soca_lines
-
-
-def get_Jtop_lines(data, num_speakers):
-    if data['All_linked'] == True:
-        num_soca_lines = int(num_speakers / 2 / FAN_OUT_3_LEGS)
-        num_ep5_lines = num_speakers / 2 - (num_soca_lines * FAN_OUT_3_LEGS)
-    elif data['All_linked'] == False:
-        num_soca_lines = int(num_speakers / FAN_OUT_3_LEGS)
-        num_ep5_lines = num_speakers - (num_soca_lines * FAN_OUT_3_LEGS)
-    num_3legged_fanouts = num_soca_lines
-    return num_3legged_fanouts, num_ep5_lines, num_soca_lines
-
-
-def get_subs_lines(num_speakers):
-    """
-
-    :param num_speakers:
-    :return:
-    """
-    num_soca_lines = int(num_speakers / FAN_OUT_3_LEGS)
-    num_ep5_lines = num_speakers - (num_soca_lines * FAN_OUT_3_LEGS)
-    num_3legged_fanouts = num_soca_lines
-    return num_3legged_fanouts, num_ep5_lines, num_soca_lines
-
-
 def get_distance_to_hang(hang, anchors) -> float:
     delta = 0. #diff between two anchor points
     for i in range(len(anchors) - 1):
         for j in range(len(anchors[i])):
            delta += abs(anchors[i][j] - anchors[i+1][j])
-    print("Distance inside func", delta)
-
     for d in range(len(anchors[-1])):
         delta += abs(anchors[-1][d] - hang[d])
-
-
-    print("Distance inside func", delta)
     return delta
 
 
+def get_cable_number(data):
+    # parsing data to variables
+
+    distance_to_hang = get_distance_to_hang(data['Hang'], data['Anchors'])
+    num_soca_cables_total, num_ep5_cables_total = 0, 0
+
+    biamp_lines, one_amp_lines = get_lines(data)
+    num_lines = calculate_soca(biamp_lines,one_amp_lines)
+
+    if num_lines['Soca'] > 0:
+        num_soca_cables_inline = 1
+        while distance_to_hang > SOCA_LEN * num_soca_cables_inline:
+            num_soca_cables_inline += 1
+        num_soca_cables_total = num_soca_cables_inline * num_lines['Soca']
+
+    if num_lines['EP5'] > 0:
+        num_ep5_cables_inline = 1
+        while distance_to_hang > EP5_LEN * num_ep5_cables_inline:
+            num_ep5_cables_inline += 1
+        num_ep5_cables_total = num_ep5_cables_inline * num_lines['EP5']
+
+    print("\nType of speaker", data['Speaker'],
+          "\nDistance to speaker", distance_to_hang,
+          "\nNumber of speakers", data['Num_speakers'],
+          "\nAmp position", data['Anchors'][0])
+    print("Hang", data['Hang'])
+    print('Anchors')
+    for anchor in data['Anchors']:
+        if anchor != data['Anchors'][0]:
+            print(anchor)
+    print("Soca", num_soca_cables_total,
+          "\nEP5", num_ep5_cables_total,
+          "\n3 legged fanouts", num_lines['Calamary'],
+          "\n6 legged fanouts", num_lines['Octopus'])
+    print("Soca lines", num_lines['Soca'])
+    print("EP5 lines", num_lines['EP5'])
+
+
+    return {"EP5": num_ep5_cables_total,
+            "Soca": num_soca_cables_total,
+            "ThreeLegFanOut":num_lines['Calamary'],
+            "SixLegFanOut":num_lines['Octopus'],
+            "Distance": distance_to_hang,
+            "NumSpeakers": data['Num_speakers'],
+            "TypeSpeakers": data['Speaker']}
+
+
 def main():
-    data = get_data_pdf()  # getting the data from user
+    # path = input("Input path to pdf file to scan? \n")
+    path = 'Groundstacked.pdf'
+    data = get_data_pdf(path)  # getting the data from user
+    get_cable_number(data)
+    path = '22NotLinked.pdf'
+    data = get_data_pdf(path)  # getting the data from user
+    get_cable_number(data)
+    path = 'Main+Sub.pdf'
+    data = get_data_pdf(path)  # getting the data from user
     get_cable_number(data)
 
 # Press the green button in the gutter to run the script.
