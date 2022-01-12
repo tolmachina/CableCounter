@@ -1,0 +1,5 @@
+venv
+SetupData
+*.pdf
+.DS_Store
+.idea
