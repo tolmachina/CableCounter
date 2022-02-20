@@ -6,12 +6,14 @@ SOCA_LEN = 25  # soca cable meters
 EP5_LEN = 10  # ep5 cable meters
 FAN_OUT_3_LEGS = 3  # cable breakout for 3 biamp legs
 FAN_OUT_6_LEGS = 6  # cable breakout for 6 oneamp legs
+TEMPLATE_PATH = 'web_interface/Main_Setup.tabula-template.json'
+ANCHORS_PATH = "web_interface/anchors.csv"
 
 
 def get_data_pdf(filepath):
-    template_path = 'Main_Setup.tabula-template.json'
+    
     df = read_pdf_with_template(filepath,
-                                template_path,
+                                TEMPLATE_PATH,
                                 pandas_options={'header': None})
 
     for t in df:
@@ -49,7 +51,7 @@ def get_data_pdf(filepath):
             all_linked = True
 
     anchors = []
-    with open('anchors.csv', newline='') as csvfile:
+    with open(ANCHORS_PATH, newline='') as csvfile:
         anchor_reader = csv.reader(csvfile, delimiter=',', quoting=csv.QUOTE_NONNUMERIC)
         for row in anchor_reader:
             anchors.append(list(row))

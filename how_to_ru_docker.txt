@@ -8,3 +8,7 @@ docker run --name cashman \
 
 # fetch incomes from the dockerized instance
 curl http://localhost:5000/incomes/
+
+
+DOCKER_BUILDKIT=1 docker build .
+

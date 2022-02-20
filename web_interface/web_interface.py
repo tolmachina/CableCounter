@@ -1,9 +1,9 @@
 import os
-from flask import Flask, jsonify, render_template, flash,request,redirect, url_for, send_from_directory
+from flask import Flask, jsonify, render_template, flash, request, redirect, send_from_directory
 from werkzeug.utils import secure_filename
 import CableCounter as cc
 
-UPLOAD_FOLDER = 'uploaded_by_user'
+UPLOAD_FOLDER = 'web_interface/uploaded_by_user'
 ALLOWED_EXTENSIONS= {'pdf'}
 
 def allowed_file(filename):
