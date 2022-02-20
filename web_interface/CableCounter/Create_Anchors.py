@@ -5,7 +5,7 @@ Something to create anchors
 class createFiles():
     def __init__(self):
         self.path = "SetupData"
-        self.dir_list = os.listdir(path)
+        self.dir_list = os.listdir(self.path)
 
     def touch(self):
         for name in self.dir_list:

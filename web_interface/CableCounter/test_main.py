@@ -1,17 +1,5 @@
 from unittest import TestCase
-from main import get_cable_number
-
-def get_data_test():
-
-    return test_data
-
-
-# class Test(TestCase):
-#     def test_get_data(self):
-#         self.fail()
-#
-#     def test_main(self):
-#         self.fail()
+from __init__ import get_cable_number, get_data_pdf
 
 
 class Test(TestCase):
