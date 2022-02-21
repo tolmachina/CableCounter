@@ -1,0 +1,13 @@
+If you lose the password, or it does not display as shown above, or you need to restart the Jenkins
+sever, you can always retrieve the password by accessing the command line of Jenkins Docker container.
+Create a second terminal window in VS Code and enter the following commands so that you do not stop the
+Jenkins server:
+
+docker exec -it jenkins_server /bin/bash
+cat /var/jenkins_home/secrets/initialAdminPassword
+
+docker run --rm -u root -p
+8080:8080 -v jenkins-data:/var/jenkins_home -v $(which
+docker):/usr/bin/docker -v /var/run/docker.sock:/var/run/docker.sock -v
+"$HOME":/home --name jenkins_server jenkins/jenkins:lts
+
