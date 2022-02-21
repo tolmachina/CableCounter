@@ -6,14 +6,13 @@
 
 {% block main %}
 <div>
-    <h1>
-        Upload your setupfile.pdf
-        <a href="/upload">Upload</a>
-    </h1>
-
+    <h1>If you have setup data ready:</h1>
+    <div>
+        <h1>Upload your setupfile.pdf</h1>
+        <form method=post enctype=multipart/form-data>
+            <input type=file name=file>
+            <input type=submit value=Upload>
+         </form>
+    </div>
 </div>
-
-
-
-
 {% endblock %}
