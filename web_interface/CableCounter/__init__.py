@@ -1,5 +1,7 @@
 import csv
+from tkinter import Variable
 from tabula import read_pdf_with_template
+from typing import Any, List, Dict
 
 C = 13.5  # ceiling meters high
 SOCA_LEN = 25  # soca cable meters
@@ -10,17 +12,15 @@ TEMPLATE_PATH = 'web_interface/Main_Setup.tabula-template.json'
 ANCHORS_PATH = "web_interface/anchors.csv"
 
 
-def get_data_pdf(filepath):
-    
+def get_data_pdf(filepath, anchors_file_path=ANCHORS_PATH):
     df = read_pdf_with_template(filepath,
                                 TEMPLATE_PATH,
                                 pandas_options={'header': None})
-
     for t in df:
         print(t)
 
     is_flown = df[0][1][0].split(" ")[-1]
-    print(is_flown)
+
     if is_flown == 'flown':
         flown = True
     else:
@@ -47,40 +47,53 @@ def get_data_pdf(filepath):
 
     all_linked = False
     if links != 0:
-        if num_speakers_total / links == 2:
+        if num_speakers_total // links == 2:
             all_linked = True
 
-    anchors = []
-    with open(ANCHORS_PATH, newline='') as csvfile:
-        anchor_reader = csv.reader(csvfile, delimiter=',', quoting=csv.QUOTE_NONNUMERIC)
-        for row in anchor_reader:
-            anchors.append(list(row))
-
-    data = {'Hang': hang,
+    anchors = get_anchors(anchors_file_path)
+    data_from_pdf = {'Hang': hang,
             'Speaker': speakers,
             'Num_speakers': num_speakers_total,
             'Links': links,
             'All_linked': all_linked,
             'Anchors': anchors,
             'Flown': flown}
+    return data_from_pdf
 
-    print("num speakers total", num_speakers_total)
-    return data
+def get_anchors(anchors_file_path: str):
+    anchors: List[List[float]] = []
+    with open(anchors_file_path, newline='') as csvfile:
+        dialect = csv.Sniffer().sniff(csvfile.read(1024))
+        csvfile.seek(0)
+        anchor_reader = csv.reader(csvfile, dialect)
+        print(dialect)
+        for row in anchor_reader:
+            row = list(map(float, row))
+            anchors.append(row)
+    print(anchors)
+    return anchors
 
-
-def get_lines(data):
-    biamp_lines, one_amp_lines = 0, 0
+def get_lines(data: Dict[str, Any]):
+    biamp_lines: int = 0
+    one_amp_lines: int = 0
     for speaker in data['Speaker']:
         if speaker == 'J-SUB':
             biamp_lines += data['Speaker']['J-SUB']
         if speaker == 'J-Top':
             biamp_lines += data['Speaker']["J-Top"] - data['Links']
         else:
-            one_amp_lines += data['Speaker'][speaker] - data['Links']
+            if data['Speaker'][speaker] != 0:
+                one_amp_lines += data['Speaker'][speaker] - data['Links']
     return biamp_lines, one_amp_lines
 
-
-def calculate_soca(biamp_lines, one_amp_lines):
+def calculate_soca(biamp_lines: int, one_amp_lines: int):
+    """
+    @input: int of biamp lines, int of one_amp lines
+    @output: 'Soca': soca_lines, 
+             'EP5': one_amp_lines, 
+             'Calamary': soca_lines or 0, 
+             'Octopus': soca_lines or 0}
+    """
     assert (biamp_lines != one_amp_lines)
 
     if biamp_lines > one_amp_lines:
@@ -93,29 +106,7 @@ def calculate_soca(biamp_lines, one_amp_lines):
         num_lines = {'Soca': soca_lines, 'EP5': one_amp_lines, 'Calamary': 0, 'Octopus': soca_lines}
     return num_lines
 
-
-def get_data_manual():
-    hang = list(map(float, input("Enter hang position with spaces between x y z\n").split()))
-    num_anchors = input("Enter num of anchor points in cable trace.")
-    anchors = []
-    for i in range(num_anchors):
-        anchor = list(map(float, input("Enter anchor point for cable trace in x y z\n").split()))
-        anchors.append(anchor)
-    speaker = input("Speaker J-Sub, J-Top or one channel? Enter 'J-Sub', 'J-Top', 'One'\n")
-    assert (speaker == 'J-Sub' or speaker == 'J-Top' or speaker == 'One')
-    links = False
-    if speaker == 'J-Top' or speaker == 'One':
-        links = input("Are they linked? y/n")
-        if links == 'y':
-            links = True
-        else:
-            links = False
-    num_speakers = int(input("Num of speakers in hang?\n"))
-    data = {'Hang': hang, 'Speaker': speaker, 'Num_speakers': num_speakers, 'Links': links, 'Anchors': anchors}
-    return data
-
-
-def get_distance_to_hang(hang, anchors) -> float:
+def get_distance_to_hang(hang: list[float], anchors:list[list[float]]) -> float:
     delta = 0.  # diff between two anchor points
     for i in range(len(anchors) - 1):
         for j in range(len(anchors[i])):
@@ -124,8 +115,7 @@ def get_distance_to_hang(hang, anchors) -> float:
         delta += abs(anchors[-1][d] - hang[d])
     return delta
 
-
-def get_cable_number(data):
+def get_cable_number(data:dict[str,Any]):
     # parsing data to variables
 
     distance_to_hang = get_distance_to_hang(data['Hang'], data['Anchors'])
@@ -146,23 +136,11 @@ def get_cable_number(data):
             num_ep5_cables_inline += 1
         num_ep5_cables_total = num_ep5_cables_inline * num_lines['EP5']
 
-    print("\nType of speaker", data['Speaker'],
-          "\nDistance to speaker", distance_to_hang,
-          "\nNumber of speakers", data['Num_speakers'],
-          "\nAmp position", data['Anchors'][0])
-    print("Hang", data['Hang'])
-    print('Anchors')
     for anchor in data['Anchors']:
         if anchor != data['Anchors'][0]:
             print(anchor)
-    print("Soca", num_soca_cables_total,
-          "\nEP5", num_ep5_cables_total,
-          "\n3 legged fanouts", num_lines['Calamary'],
-          "\n6 legged fanouts", num_lines['Octopus'])
-    print("Soca lines", num_lines['Soca'])
-    print("EP5 lines", num_lines['EP5'])
 
-    cable_numbers = {"TypeSpeakers": data['Speaker'],
+    cable_numbers: dict[str, Any] = {"TypeSpeakers": data['Speaker'],
                      "EP5": num_ep5_cables_total,
                      "Soca": num_soca_cables_total,
                      "ThreeLegFanOut": num_lines['Calamary'],
@@ -174,5 +152,24 @@ def get_cable_number(data):
 
     return cable_numbers
 
+def get_data_manual():
+    hang = list(map(float, input("Enter hang position with spaces between x y z\n").split()))
+    num_anchors = input("Enter num of anchor points in cable trace.")
+    anchors = []
+    for i in range(num_anchors):
+        anchor = list(map(float, input("Enter anchor point for cable trace in x y z\n").split()))
+        anchors.append(anchor)
+    speaker = input("Speaker J-Sub, J-Top or one channel? Enter 'J-Sub', 'J-Top', 'One'\n")
+    assert (speaker == 'J-Sub' or speaker == 'J-Top' or speaker == 'One')
+    links = False
+    if speaker == 'J-Top' or speaker == 'One':
+        links = input("Are they linked? y/n")
+        if links == 'y':
+            links = True
+        else:
+            links = False
+    num_speakers = int(input("Num of speakers in hang?\n"))
+    data = {'Hang': hang, 'Speaker': speaker, 'Num_speakers': num_speakers, 'Links': links, 'Anchors': anchors}
+    return data
 
 

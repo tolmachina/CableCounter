@@ -1,19 +1,32 @@
-
-
 {% extends "layout.html" %}
-
 {% block title %}
     Home
 {% endblock %}
-
 {% block main %}
-<div class="container">
-   
-    <ul> 
-        {% for key in jsonfile %}
-            <li>{{key, jsonfile[key] }}</li>
-        {% endfor %}
-    </ul>
-  </div>
+<table data-toggle="table" id ='table'> Table Results 
+    <tr id ='table_head'> 
 
+    </tr>
+    <tbody id="table_row"> 
+        
+    </tbody>
+</table>
+
+<script> 
+const data = {{ jsonfile | tojson }};
+const object = JSON.parse(data)
+let table_data = "";
+for (const key in object) {
+    if (key == 'TypeSpeakers'){
+        let typeSpeaker = ''
+        for (speaker in object[key]){
+            typeSpeaker += speaker + ": " + object[key][speaker] + ", ";
+        }
+        table_data += "<tr>" + "<td>" + key + "</td>" + "<td>" + typeSpeaker.slice(0,-1) + "</td>"+ "</tr>";
+    } else {
+    table_data += "<tr>" + "<td>" + key + "</td>" + "<td>" + object[key]+ "</td>"+ "</tr>";
+    }
+}
+document.getElementById('table_row').innerHTML = table_data;
+</script>
 {% endblock %}

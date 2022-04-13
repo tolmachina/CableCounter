@@ -6,6 +6,7 @@ Jenkins server:
 docker exec -it jenkins_server /bin/bash
 cat /var/jenkins_home/secrets/initialAdminPassword
 
+# taken from devasc seems to work
 docker run --rm -u root -p
 8080:8080 -v jenkins-data:/var/jenkins_home -v $(which
 docker):/usr/bin/docker -v /var/run/docker.sock:/var/run/docker.sock -v

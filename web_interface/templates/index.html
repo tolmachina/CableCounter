@@ -10,7 +10,12 @@
     <div>
         <h1>Upload your setupfile.pdf</h1>
         <form method=post enctype=multipart/form-data>
-            <input type=file name=file>
+            <label for="setup_file">Select an array setup file:</label>
+            <input type="file" id = "setup_file" name="file_pdf">
+            <br>
+            <label for="anchor_file">Select an anchors file:</label>
+            <input type="file" id="anchor_file" name="file_anchor">
+            <br>
             <input type=submit value=Upload>
          </form>
     </div>

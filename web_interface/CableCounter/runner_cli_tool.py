@@ -1,7 +1,9 @@
 import os
 import sys
 from __init__ import *
-
+"""
+Run the app as CLI
+"""
 def main():
     # path = input("Input path to pdf file to scan? \n")
     """

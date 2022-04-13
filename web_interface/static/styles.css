@@ -98,11 +98,10 @@ output {
     color:white;
     background-color: rgb(139, 178, 250);
 }
-.input_box
+/* .input_box
 {
-   
 
-}
+} */
 .scoreboard 
 {
     width:100%;
@@ -121,3 +120,24 @@ output {
     overflow: hidden; /*  Disable scrollbars */
     display: block;  /* No floating content on sides */
   }
+
+table {
+    border: 1px solid;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: center;
+    padding: 8px;
+}
+
+td {
+    border: 1px solid;
+}
+/* tr:nth-child(even){background-color: #f2f2f2} */
+/* 
+th {
+background-color: #ffffff;
+color: white;
+} */
