@@ -50,7 +50,7 @@ def get_data_pdf(filepath, anchors_file_path=ANCHORS_PATH):
         if num_speakers_total // links == 2:
             all_linked = True
 
-    anchors = get_anchors(anchors_file_path)
+    anchors = get_anchors_from_file(anchors_file_path)
     data_from_pdf = {'Hang': hang,
             'Speaker': speakers,
             'Num_speakers': num_speakers_total,
@@ -60,60 +60,6 @@ def get_data_pdf(filepath, anchors_file_path=ANCHORS_PATH):
             'Flown': flown}
     return data_from_pdf
 
-def get_anchors(anchors_file_path: str):
-    anchors: List[List[float]] = []
-    with open(anchors_file_path, newline='') as csvfile:
-        dialect = csv.Sniffer().sniff(csvfile.read(1024))
-        csvfile.seek(0)
-        anchor_reader = csv.reader(csvfile, dialect)
-        print(dialect)
-        for row in anchor_reader:
-            row = list(map(float, row))
-            anchors.append(row)
-    print(anchors)
-    return anchors
-
-def get_lines(data: Dict[str, Any]):
-    biamp_lines: int = 0
-    one_amp_lines: int = 0
-    for speaker in data['Speaker']:
-        if speaker == 'J-SUB':
-            biamp_lines += data['Speaker']['J-SUB']
-        if speaker == 'J-Top':
-            biamp_lines += data['Speaker']["J-Top"] - data['Links']
-        else:
-            if data['Speaker'][speaker] != 0:
-                one_amp_lines += data['Speaker'][speaker] - data['Links']
-    return biamp_lines, one_amp_lines
-
-def calculate_soca(biamp_lines: int, one_amp_lines: int):
-    """
-    @input: int of biamp lines, int of one_amp lines
-    @output: 'Soca': soca_lines, 
-             'EP5': one_amp_lines, 
-             'Calamary': soca_lines or 0, 
-             'Octopus': soca_lines or 0}
-    """
-    assert (biamp_lines != one_amp_lines)
-
-    if biamp_lines > one_amp_lines:
-        soca_lines = int(biamp_lines / FAN_OUT_3_LEGS)
-        biamp_lines -= soca_lines * FAN_OUT_3_LEGS
-        num_lines = {'Soca': soca_lines, 'EP5': biamp_lines, 'Calamary': soca_lines, 'Octopus': 0}
-    else:
-        soca_lines = int(one_amp_lines / FAN_OUT_6_LEGS)
-        one_amp_lines -= soca_lines * FAN_OUT_6_LEGS
-        num_lines = {'Soca': soca_lines, 'EP5': one_amp_lines, 'Calamary': 0, 'Octopus': soca_lines}
-    return num_lines
-
-def get_distance_to_hang(hang: list[float], anchors:list[list[float]]) -> float:
-    delta = 0.  # diff between two anchor points
-    for i in range(len(anchors) - 1):
-        for j in range(len(anchors[i])):
-            delta += abs(anchors[i][j] - anchors[i + 1][j])
-    for d in range(len(anchors[-1])):
-        delta += abs(anchors[-1][d] - hang[d])
-    return delta
 
 def get_cable_number(data:dict[str,Any]):
     # parsing data to variables
@@ -151,6 +97,76 @@ def get_cable_number(data:dict[str,Any]):
 
 
     return cable_numbers
+
+
+def get_anchors_from_file(anchors_file_path: str):
+    anchors: List[List[float]] = []
+    with open(anchors_file_path, newline='') as csvfile:
+        dialect = csv.Sniffer().sniff(csvfile.read(1024))
+        csvfile.seek(0)
+        anchor_reader = csv.reader(csvfile, dialect)
+        print(dialect)
+        for row in anchor_reader:
+            row = list(map(float, row))
+            anchors.append(row)
+    print(anchors)
+    return anchors
+
+
+def get_distance_to_hang(hang: list[float], anchors:list[list[float]]) -> float:
+    """
+    Args:
+        hang (list[float]): Position in x, y, z coordinates.
+        anchors (list[list[float]]): Points for cable run in x, y, z [[0, 2, 0], [0,2,4]]
+
+    Returns:
+        float: Distance in meters
+    """
+    
+    delta = 0.  # diff between two anchor points
+    for i in range(len(anchors) - 1):
+        for j in range(len(anchors[i])):
+            delta += abs(anchors[i][j] - anchors[i + 1][j])
+    for d in range(len(anchors[-1])):
+        delta += abs(anchors[-1][d] - hang[d])
+    print(delta)
+    return delta
+
+
+def get_lines(data: Dict[str, Any]):
+    biamp_lines: int = 0
+    one_amp_lines: int = 0
+    for speaker in data['Speaker']:
+        if speaker == 'J-SUB':
+            biamp_lines += data['Speaker']['J-SUB']
+        if speaker == 'J-Top':
+            biamp_lines += data['Speaker']["J-Top"] - data['Links']
+        else:
+            if data['Speaker'][speaker] != 0:
+                one_amp_lines += data['Speaker'][speaker] - data['Links']
+    return biamp_lines, one_amp_lines
+
+
+def calculate_soca(biamp_lines: int, one_amp_lines: int):
+    """
+    @input: int of biamp lines, int of one_amp lines
+    @output: 'Soca': soca_lines, 
+             'EP5': one_amp_lines, 
+             'Calamary': soca_lines or 0, 
+             'Octopus': soca_lines or 0}
+    """
+    assert (biamp_lines != one_amp_lines)
+
+    if biamp_lines > one_amp_lines:
+        soca_lines = int(biamp_lines / FAN_OUT_3_LEGS)
+        biamp_lines -= soca_lines * FAN_OUT_3_LEGS
+        num_lines = {'Soca': soca_lines, 'EP5': biamp_lines, 'Calamary': soca_lines, 'Octopus': 0}
+    else:
+        soca_lines = int(one_amp_lines / FAN_OUT_6_LEGS)
+        one_amp_lines -= soca_lines * FAN_OUT_6_LEGS
+        num_lines = {'Soca': soca_lines, 'EP5': one_amp_lines, 'Calamary': 0, 'Octopus': soca_lines}
+    return num_lines
+
 
 def get_data_manual():
     hang = list(map(float, input("Enter hang position with spaces between x y z\n").split()))

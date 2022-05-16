@@ -1,2 +1,0 @@
-#!/bin/sh
-python3 runner_cli_tool.py test_data/2.pdf results_of_2.csv

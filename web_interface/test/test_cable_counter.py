@@ -1,6 +1,7 @@
-from unittest import TestCase
-from __init__ import get_cable_number, get_data_pdf, get_lines
+import sys
+from ..backend.CableCounter import get_cable_number, get_lines, get_distance_to_hang, get_anchors_from_file
 
+print(sys.path)
 hang = [33.0, 6.0, 9.5]
 anchors = [[10, 0, 0], [0,3,0], [0,0,10]]
 speaker_type = {'Q-SUB': 0, 'Q1': 5, 'Q7': 0}
@@ -17,7 +18,15 @@ data = {'Hang': hang,
         'Anchors': anchors,
         'Flown': flown}
 
-class Test(TestCase):
+class TestCableCounter():
+    def test_get_distance_to_hang(self):
+        assert get_distance_to_hang([10, 0, 0], [[0,0,0]]) == 10.0
+        assert get_distance_to_hang([0, 0, 0], [[0,0,0]]) == 0.0
+        assert get_distance_to_hang([10, 20, 5], [[0,0,0], [10, 0, 0], [10, 20, 0]]) == 35
+        assert get_distance_to_hang([10, 20, 5], [[0, -5,0], [10, 0, 0], [10, 20, 0]]) == 40
+        # assert get_distance_to_hang([10, -20, 5], [[0, -5,0], [10, 0, 0], [10, 20, 0]]) == 30
+
+
     def test_get_cable_number(self):
         hang = [4.2, 11.5, 10.0]  # x y z coordinates of hang
         speaker = 'J-Sub'  # type of speaker
@@ -45,5 +54,7 @@ class Test(TestCase):
         assert(oneamp == 2)
         
 
-test = Test()
-test.test_get_lines()
+# test = TestCableCounter()
+# test.test_get_distance_to_hang()
+
+# test.test_get_lines()

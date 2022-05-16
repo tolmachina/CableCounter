@@ -1,6 +1,6 @@
 import os
 """
-Something to create anchors
+Something to create anchors files
 not implemented
 """
 class createFiles():
