@@ -11,6 +11,9 @@ FAN_OUT_6_LEGS = 6  # cable breakout for 6 oneamp legs
 TEMPLATE_PATH = 'web_interface/Main_Setup.tabula-template.json'
 ANCHORS_PATH = "web_interface/anchors.csv"
 
+BIAMP_LINKABLE: set[str] = {'J-TOP', 'KSL-TOP','J8', 'J12', 'KSL8', 'KSL12', 'XSL8','XSL12'}
+
+BIAMP_UNLINKABLE: set[str] = {'J-SUB', 'GSL-TOP', 'GSL-SUB', 'KSL-SUB', 'GSL8', 'GSL12'}
 
 def get_data_pdf(filepath, anchors_file_path=ANCHORS_PATH):
     df = read_pdf_with_template(filepath,
@@ -37,7 +40,7 @@ def get_data_pdf(filepath, anchors_file_path=ANCHORS_PATH):
         speakers[(df[1][2][i].split(" ")[-1][0:-1])] = int(df[1][3][i])
 
     try:
-        speakers['J-Top'] = speakers['J8'] + speakers['J12']
+        speakers['J-TOP'] = speakers['J8'] + speakers['J12']
         speakers.pop('J8')
         speakers.pop('J12')
     except:
@@ -51,13 +54,15 @@ def get_data_pdf(filepath, anchors_file_path=ANCHORS_PATH):
             all_linked = True
 
     anchors = get_anchors_from_file(anchors_file_path)
-    data_from_pdf = {'Hang': hang,
-            'Speaker': speakers,
-            'Num_speakers': num_speakers_total,
-            'Links': links,
-            'All_linked': all_linked,
-            'Anchors': anchors,
-            'Flown': flown}
+    data_from_pdf = {
+        'Hang': hang,
+        'Speaker': speakers,
+        'Num_speakers': num_speakers_total,
+        'Links': links,
+        'All_linked': all_linked,
+        'Anchors': anchors,
+        'Flown': flown
+        }
     return data_from_pdf
 
 
@@ -86,16 +91,15 @@ def get_cable_number(data:dict[str,Any]):
         if anchor != data['Anchors'][0]:
             print(anchor)
 
-    cable_numbers: dict[str, Any] = {"TypeSpeakers": data['Speaker'],
-                     "EP5": num_ep5_cables_total,
-                     "Soca": num_soca_cables_total,
-                     "ThreeLegFanOut": num_lines['Calamary'],
-                     "SixLegFanOut": num_lines['Octopus'],
-                     "Distance": distance_to_hang,
-                     "NumSpeakers": data['Num_speakers']
-                     }
-
-
+    cable_numbers: dict[str, Any] = {
+        "TypeSpeakers": data['Speaker'],
+        "EP5": num_ep5_cables_total,
+        "Soca": num_soca_cables_total,
+        "ThreeLegFanOut": num_lines['Calamary'],
+        "SixLegFanOut": num_lines['Octopus'],
+        "Distance": distance_to_hang,
+        "NumSpeakers": data['Num_speakers']      
+        }
     return cable_numbers
 
 
@@ -137,10 +141,10 @@ def get_lines(data: Dict[str, Any]):
     biamp_lines: int = 0
     one_amp_lines: int = 0
     for speaker in data['Speaker']:
-        if speaker == 'J-SUB':
-            biamp_lines += data['Speaker']['J-SUB']
-        if speaker == 'J-Top':
-            biamp_lines += data['Speaker']["J-Top"] - data['Links']
+        if speaker.upper() in BIAMP_UNLINKABLE:
+            biamp_lines += data['Speaker'][speaker.upper()]
+        elif speaker.upper() in BIAMP_LINKABLE:
+            biamp_lines += data['Speaker'][speaker.upper()] - data['Links']
         else:
             if data['Speaker'][speaker] != 0:
                 one_amp_lines += data['Speaker'][speaker] - data['Links']

@@ -1,0 +1,239 @@
+<!DOCTYPE ArrayCalc>
+<MainArrays Version="6">
+    <MainArray CPL5Mid="1" ShowRigging="1" Mono="0" TestPointIndex="0" ArrayProcessingSlotIndex="0" Delay="0.0003" DefaultSubnet="0" LinkMode="0" CPL5Lo="11" SW2Subs="0" SW1Subs="0" CompressionModeEnabled="0" ArraySightEnabled="0" Mirror="0" ArrayProcessingEnabled="0" Mounting="flown" Name="KSL9" DefaultDevice="31" Mute="0" CPL="0" CompressionForce="9810" StackedFrameAngle="-0" HorizontalAiming="0" Type="KSL" SW1Tops="0">
+        <Origin z="12" x="20" y="-15"/>
+        <FlyingFrame FrontPickpointHole="0" RearPickpointHole="25" FrameAngle="-2.8" SinglePickpointHole="12" LoadBeamPosition="standard"/>
+        <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="0" Delay="0.0003" VerticalAngle="-2.8" SW5="1" HorizontalAngle="0" SW1="0" Name="KSL8" Linked="0" PivotAngle="0" Mute="0" SW4="11" CabinetsPerPosition="1">
+            <Origin z="11.83651462405141" x="19.97523421006815" y="-15"/>
+            <AmplifierChannel InputType="4" Device="31" OutputMode="8" Subnet="0" Name="0.31" Type="D80" Channel="3" ChannelName="KSL9 01L">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="1" Delay="0.0003" VerticalAngle="-3.9" SW5="1" HorizontalAngle="0" SW1="0" Name="KSL8" Linked="1" PivotAngle="0" Mute="0" SW4="11" CabinetsPerPosition="1">
+            <Origin z="11.50471122522659" x="19.95900631654205" y="-15"/>
+            <AmplifierChannel InputType="4" Device="31" OutputMode="8" Subnet="0" Name="0.31" Type="D80" Channel="3" ChannelName="KSL9 01L">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="1" Level="0" TestPointIndex="0" SW2="0" SplayAngle="2" Delay="0.0003" VerticalAngle="-5.9" SW5="1" HorizontalAngle="0" SW1="0" Name="KSL8" Linked="0" PivotAngle="0" Mute="0" SW4="11" CabinetsPerPosition="1">
+            <Origin z="11.1732805077974" x="19.93641163698305" y="-15"/>
+            <AmplifierChannel InputType="4" Device="33" OutputMode="8" Subnet="0" Name="0.33" Type="D80" Channel="3" ChannelName="KSL9 03L">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="1" Level="0" TestPointIndex="0" SW2="0" SplayAngle="2" Delay="0.0003" VerticalAngle="-7.9" SW5="1" HorizontalAngle="0" SW1="0" Name="KSL8" Linked="1" PivotAngle="0" Mute="0" SW4="11" CabinetsPerPosition="1">
+            <Origin z="10.84284023195107" x="19.90226395626233" y="-15"/>
+            <AmplifierChannel InputType="4" Device="33" OutputMode="8" Subnet="0" Name="0.33" Type="D80" Channel="3" ChannelName="KSL9 03L">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="1" Level="0" TestPointIndex="0" SW2="0" SplayAngle="2" Delay="0.0003" VerticalAngle="-9.9" SW5="1" HorizontalAngle="0" SW1="0" Name="KSL8" Linked="0" PivotAngle="0" Mute="0" SW4="11" CabinetsPerPosition="1">
+            <Origin z="10.51379298826331" x="19.85660487806879" y="-15"/>
+            <AmplifierChannel InputType="4" Device="35" OutputMode="8" Subnet="0" Name="0.35" Type="D80" Channel="3" ChannelName="KSL9 05L">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="1" Level="0" TestPointIndex="0" SW2="0" SplayAngle="3" Delay="0.0003" VerticalAngle="-12.9" SW5="1" HorizontalAngle="0" SW1="0" Name="KSL8" Linked="1" PivotAngle="0" Mute="0" SW4="11" CabinetsPerPosition="1">
+            <Origin z="10.18653967011469" x="19.79949003095597" y="-15"/>
+            <AmplifierChannel InputType="4" Device="35" OutputMode="8" Subnet="0" Name="0.35" Type="D80" Channel="3" ChannelName="KSL9 05L">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="1" Level="0" TestPointIndex="0" SW2="0" SplayAngle="3" Delay="0.0003" VerticalAngle="-15.9" SW5="1" HorizontalAngle="0" SW1="0" Name="KSL8" Linked="0" PivotAngle="0" Mute="0" SW4="11" CabinetsPerPosition="1">
+            <Origin z="9.862724001404368" x="19.72532634241713" y="-15"/>
+            <AmplifierChannel InputType="4" Device="37" OutputMode="8" Subnet="0" Name="0.37" Type="D80" Channel="3" ChannelName="KSL9 07L">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="1" Level="0" TestPointIndex="0" SW2="0" SplayAngle="3" Delay="0.0003" VerticalAngle="-18.9" SW5="1" HorizontalAngle="0" SW1="0" Name="KSL8" Linked="1" PivotAngle="0" Mute="0" SW4="11" CabinetsPerPosition="1">
+            <Origin z="9.543233538372121" x="19.6343170899675" y="-15"/>
+            <AmplifierChannel InputType="4" Device="37" OutputMode="8" Subnet="0" Name="0.37" Type="D80" Channel="3" ChannelName="KSL9 07L">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="1" Level="0" TestPointIndex="0" SW2="0" SplayAngle="4" Delay="0.0003" VerticalAngle="-22.9" SW5="1" HorizontalAngle="0" SW1="0" Name="KSL8" Linked="0" PivotAngle="0" Mute="0" SW4="11" CabinetsPerPosition="1">
+            <Origin z="9.228943982169611" x="19.52671172364207" y="-15"/>
+            <AmplifierChannel InputType="4" Device="39" OutputMode="8" Subnet="0" Name="0.39" Type="D80" Channel="3" ChannelName="KSL9 09L">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+        </Box>
+        <ArrayProcessingSlotSettings Temperature="293.16" SessionIdSecond="0" PowerGlory="0.5" Flags="1" SlotNumber="1" Humidity="60" Name="Bypass" CreatedOn="2022-05-18T12:13:34Z" VenueSessionId="1652876014094" Comment="This slot is reserved for bypassing ArrayProcessing." SessionIdFirst="0" SelectedPlaneId="0">
+            <TargetProfile/>
+            <Slopes Slope2="-3" Slope3="-3" Slope1="0"/>
+            <Distances Distance1="0" Distance2="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" SessionIdSecond="0" PowerGlory="0.5" Flags="1" SlotNumber="2" Humidity="60" Name="" CreatedOn="2022-05-18T12:13:34Z" VenueSessionId="1652876014094" Comment="" SessionIdFirst="0" SelectedPlaneId="0">
+            <TargetProfile/>
+            <Slopes Slope2="-3" Slope3="-3" Slope1="0"/>
+            <Distances Distance1="0" Distance2="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" SessionIdSecond="0" PowerGlory="0.5" Flags="1" SlotNumber="3" Humidity="60" Name="" CreatedOn="2022-05-18T12:13:34Z" VenueSessionId="1652876014094" Comment="" SessionIdFirst="0" SelectedPlaneId="0">
+            <TargetProfile/>
+            <Slopes Slope2="-3" Slope3="-3" Slope1="0"/>
+            <Distances Distance1="0" Distance2="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" SessionIdSecond="0" PowerGlory="0.5" Flags="1" SlotNumber="4" Humidity="60" Name="" CreatedOn="2022-05-18T12:13:34Z" VenueSessionId="1652876014094" Comment="" SessionIdFirst="0" SelectedPlaneId="0">
+            <TargetProfile/>
+            <Slopes Slope2="-3" Slope3="-3" Slope1="0"/>
+            <Distances Distance1="0" Distance2="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" SessionIdSecond="0" PowerGlory="0.5" Flags="1" SlotNumber="5" Humidity="60" Name="" CreatedOn="2022-05-18T12:13:34Z" VenueSessionId="1652876014094" Comment="" SessionIdFirst="0" SelectedPlaneId="0">
+            <TargetProfile/>
+            <Slopes Slope2="-3" Slope3="-3" Slope1="0"/>
+            <Distances Distance1="0" Distance2="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" SessionIdSecond="0" PowerGlory="0.5" Flags="1" SlotNumber="6" Humidity="60" Name="" CreatedOn="2022-05-18T12:13:34Z" VenueSessionId="1652876014094" Comment="" SessionIdFirst="0" SelectedPlaneId="0">
+            <TargetProfile/>
+            <Slopes Slope2="-3" Slope3="-3" Slope1="0"/>
+            <Distances Distance1="0" Distance2="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" SessionIdSecond="0" PowerGlory="0.5" Flags="1" SlotNumber="7" Humidity="60" Name="" CreatedOn="2022-05-18T12:13:34Z" VenueSessionId="1652876014094" Comment="" SessionIdFirst="0" SelectedPlaneId="0">
+            <TargetProfile/>
+            <Slopes Slope2="-3" Slope3="-3" Slope1="0"/>
+            <Distances Distance1="0" Distance2="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" SessionIdSecond="0" PowerGlory="0.5" Flags="1" SlotNumber="8" Humidity="60" Name="" CreatedOn="2022-05-18T12:13:34Z" VenueSessionId="1652876014094" Comment="" SessionIdFirst="0" SelectedPlaneId="0">
+            <TargetProfile/>
+            <Slopes Slope2="-3" Slope3="-3" Slope1="0"/>
+            <Distances Distance1="0" Distance2="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" SessionIdSecond="0" PowerGlory="0.5" Flags="1" SlotNumber="9" Humidity="60" Name="" CreatedOn="2022-05-18T12:13:34Z" VenueSessionId="1652876014094" Comment="" SessionIdFirst="0" SelectedPlaneId="0">
+            <TargetProfile/>
+            <Slopes Slope2="-3" Slope3="-3" Slope1="0"/>
+            <Distances Distance1="0" Distance2="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" SessionIdSecond="0" PowerGlory="0.5" Flags="1" SlotNumber="10" Humidity="60" Name="" CreatedOn="2022-05-18T12:13:34Z" VenueSessionId="1652876014094" Comment="" SessionIdFirst="0" SelectedPlaneId="0">
+            <TargetProfile/>
+            <Slopes Slope2="-3" Slope3="-3" Slope1="0"/>
+            <Distances Distance1="0" Distance2="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+    </MainArray>
+    <MainArray CPL5Mid="1" ShowRigging="1" Mono="0" TestPointIndex="0" ArrayProcessingSlotIndex="0" Delay="0.0003" DefaultSubnet="0" LinkMode="0" CPL5Lo="11" SW2Subs="0" SW1Subs="0" CompressionModeEnabled="0" ArraySightEnabled="0" Mirror="1" ArrayProcessingEnabled="0" Mounting="flown" Name="KSL9" DefaultDevice="32" Mute="0" CPL="0" CompressionForce="9810" StackedFrameAngle="-0" HorizontalAiming="0" Type="KSL" SW1Tops="0">
+        <Origin z="12" x="20" y="15"/>
+        <FlyingFrame FrontPickpointHole="0" RearPickpointHole="25" FrameAngle="-2.8" SinglePickpointHole="12" LoadBeamPosition="standard"/>
+        <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="0" Delay="0.0003" VerticalAngle="-2.8" SW5="1" HorizontalAngle="0" SW1="0" Name="KSL8" Linked="0" PivotAngle="0" Mute="0" SW4="11" CabinetsPerPosition="1">
+            <Origin z="11.83651462405141" x="19.97523421006815" y="15"/>
+            <AmplifierChannel InputType="4" Device="31" OutputMode="8" Subnet="0" Name="0.31" Type="D80" Channel="1" ChannelName="KSL9 01R">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="1" Delay="0.0003" VerticalAngle="-3.9" SW5="1" HorizontalAngle="0" SW1="0" Name="KSL8" Linked="1" PivotAngle="0" Mute="0" SW4="11" CabinetsPerPosition="1">
+            <Origin z="11.50471122522659" x="19.95900631654205" y="15"/>
+            <AmplifierChannel InputType="4" Device="31" OutputMode="8" Subnet="0" Name="0.31" Type="D80" Channel="1" ChannelName="KSL9 01R">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="1" Level="0" TestPointIndex="0" SW2="0" SplayAngle="2" Delay="0.0003" VerticalAngle="-5.9" SW5="1" HorizontalAngle="0" SW1="0" Name="KSL8" Linked="0" PivotAngle="0" Mute="0" SW4="11" CabinetsPerPosition="1">
+            <Origin z="11.1732805077974" x="19.93641163698305" y="15"/>
+            <AmplifierChannel InputType="4" Device="33" OutputMode="8" Subnet="0" Name="0.33" Type="D80" Channel="1" ChannelName="KSL9 03R">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="1" Level="0" TestPointIndex="0" SW2="0" SplayAngle="2" Delay="0.0003" VerticalAngle="-7.9" SW5="1" HorizontalAngle="0" SW1="0" Name="KSL8" Linked="1" PivotAngle="0" Mute="0" SW4="11" CabinetsPerPosition="1">
+            <Origin z="10.84284023195107" x="19.90226395626233" y="15"/>
+            <AmplifierChannel InputType="4" Device="33" OutputMode="8" Subnet="0" Name="0.33" Type="D80" Channel="1" ChannelName="KSL9 03R">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="1" Level="0" TestPointIndex="0" SW2="0" SplayAngle="2" Delay="0.0003" VerticalAngle="-9.9" SW5="1" HorizontalAngle="0" SW1="0" Name="KSL8" Linked="0" PivotAngle="0" Mute="0" SW4="11" CabinetsPerPosition="1">
+            <Origin z="10.51379298826331" x="19.85660487806879" y="15"/>
+            <AmplifierChannel InputType="4" Device="35" OutputMode="8" Subnet="0" Name="0.35" Type="D80" Channel="1" ChannelName="KSL9 05R">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="1" Level="0" TestPointIndex="0" SW2="0" SplayAngle="3" Delay="0.0003" VerticalAngle="-12.9" SW5="1" HorizontalAngle="0" SW1="0" Name="KSL8" Linked="1" PivotAngle="0" Mute="0" SW4="11" CabinetsPerPosition="1">
+            <Origin z="10.18653967011469" x="19.79949003095597" y="15"/>
+            <AmplifierChannel InputType="4" Device="35" OutputMode="8" Subnet="0" Name="0.35" Type="D80" Channel="1" ChannelName="KSL9 05R">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="1" Level="0" TestPointIndex="0" SW2="0" SplayAngle="3" Delay="0.0003" VerticalAngle="-15.9" SW5="1" HorizontalAngle="0" SW1="0" Name="KSL8" Linked="0" PivotAngle="0" Mute="0" SW4="11" CabinetsPerPosition="1">
+            <Origin z="9.862724001404368" x="19.72532634241713" y="15"/>
+            <AmplifierChannel InputType="4" Device="37" OutputMode="8" Subnet="0" Name="0.37" Type="D80" Channel="1" ChannelName="KSL9 07R">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="1" Level="0" TestPointIndex="0" SW2="0" SplayAngle="3" Delay="0.0003" VerticalAngle="-18.9" SW5="1" HorizontalAngle="0" SW1="0" Name="KSL8" Linked="1" PivotAngle="0" Mute="0" SW4="11" CabinetsPerPosition="1">
+            <Origin z="9.543233538372121" x="19.6343170899675" y="15"/>
+            <AmplifierChannel InputType="4" Device="37" OutputMode="8" Subnet="0" Name="0.37" Type="D80" Channel="1" ChannelName="KSL9 07R">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="1" Level="0" TestPointIndex="0" SW2="0" SplayAngle="4" Delay="0.0003" VerticalAngle="-22.9" SW5="1" HorizontalAngle="0" SW1="0" Name="KSL8" Linked="0" PivotAngle="0" Mute="0" SW4="11" CabinetsPerPosition="1">
+            <Origin z="9.228943982169611" x="19.52671172364207" y="15"/>
+            <AmplifierChannel InputType="4" Device="39" OutputMode="8" Subnet="0" Name="0.39" Type="D80" Channel="1" ChannelName="KSL9 09R">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+        </Box>
+        <ArrayProcessingSlotSettings Temperature="293.16" SessionIdSecond="0" PowerGlory="0.5" Flags="1" SlotNumber="1" Humidity="60" Name="Bypass" CreatedOn="2022-05-18T12:13:34Z" VenueSessionId="1652876014094" Comment="This slot is reserved for bypassing ArrayProcessing." SessionIdFirst="0" SelectedPlaneId="0">
+            <TargetProfile/>
+            <Slopes Slope2="-3" Slope3="-3" Slope1="0"/>
+            <Distances Distance1="0" Distance2="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" SessionIdSecond="0" PowerGlory="0.5" Flags="1" SlotNumber="2" Humidity="60" Name="" CreatedOn="2022-05-18T12:13:34Z" VenueSessionId="1652876014094" Comment="" SessionIdFirst="0" SelectedPlaneId="0">
+            <TargetProfile/>
+            <Slopes Slope2="-3" Slope3="-3" Slope1="0"/>
+            <Distances Distance1="0" Distance2="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" SessionIdSecond="0" PowerGlory="0.5" Flags="1" SlotNumber="3" Humidity="60" Name="" CreatedOn="2022-05-18T12:13:34Z" VenueSessionId="1652876014094" Comment="" SessionIdFirst="0" SelectedPlaneId="0">
+            <TargetProfile/>
+            <Slopes Slope2="-3" Slope3="-3" Slope1="0"/>
+            <Distances Distance1="0" Distance2="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" SessionIdSecond="0" PowerGlory="0.5" Flags="1" SlotNumber="4" Humidity="60" Name="" CreatedOn="2022-05-18T12:13:34Z" VenueSessionId="1652876014094" Comment="" SessionIdFirst="0" SelectedPlaneId="0">
+            <TargetProfile/>
+            <Slopes Slope2="-3" Slope3="-3" Slope1="0"/>
+            <Distances Distance1="0" Distance2="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" SessionIdSecond="0" PowerGlory="0.5" Flags="1" SlotNumber="5" Humidity="60" Name="" CreatedOn="2022-05-18T12:13:34Z" VenueSessionId="1652876014094" Comment="" SessionIdFirst="0" SelectedPlaneId="0">
+            <TargetProfile/>
+            <Slopes Slope2="-3" Slope3="-3" Slope1="0"/>
+            <Distances Distance1="0" Distance2="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" SessionIdSecond="0" PowerGlory="0.5" Flags="1" SlotNumber="6" Humidity="60" Name="" CreatedOn="2022-05-18T12:13:34Z" VenueSessionId="1652876014094" Comment="" SessionIdFirst="0" SelectedPlaneId="0">
+            <TargetProfile/>
+            <Slopes Slope2="-3" Slope3="-3" Slope1="0"/>
+            <Distances Distance1="0" Distance2="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" SessionIdSecond="0" PowerGlory="0.5" Flags="1" SlotNumber="7" Humidity="60" Name="" CreatedOn="2022-05-18T12:13:34Z" VenueSessionId="1652876014094" Comment="" SessionIdFirst="0" SelectedPlaneId="0">
+            <TargetProfile/>
+            <Slopes Slope2="-3" Slope3="-3" Slope1="0"/>
+            <Distances Distance1="0" Distance2="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" SessionIdSecond="0" PowerGlory="0.5" Flags="1" SlotNumber="8" Humidity="60" Name="" CreatedOn="2022-05-18T12:13:34Z" VenueSessionId="1652876014094" Comment="" SessionIdFirst="0" SelectedPlaneId="0">
+            <TargetProfile/>
+            <Slopes Slope2="-3" Slope3="-3" Slope1="0"/>
+            <Distances Distance1="0" Distance2="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" SessionIdSecond="0" PowerGlory="0.5" Flags="1" SlotNumber="9" Humidity="60" Name="" CreatedOn="2022-05-18T12:13:34Z" VenueSessionId="1652876014094" Comment="" SessionIdFirst="0" SelectedPlaneId="0">
+            <TargetProfile/>
+            <Slopes Slope2="-3" Slope3="-3" Slope1="0"/>
+            <Distances Distance1="0" Distance2="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" SessionIdSecond="0" PowerGlory="0.5" Flags="1" SlotNumber="10" Humidity="60" Name="" CreatedOn="2022-05-18T12:13:34Z" VenueSessionId="1652876014094" Comment="" SessionIdFirst="0" SelectedPlaneId="0">
+            <TargetProfile/>
+            <Slopes Slope2="-3" Slope3="-3" Slope1="0"/>
+            <Distances Distance1="0" Distance2="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+    </MainArray>
+</MainArrays>

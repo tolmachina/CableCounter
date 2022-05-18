@@ -1,0 +1,151 @@
+<!DOCTYPE ArrayCalc>
+<SubArrays Version="4">
+    <SubArray Mute="0" LinkMode="0" Delay="0.007199999999999996" SPLMappingFrequency="50" DefaultDevice="7" Symmetric="1" NominalDispersionAngle="110" Mode="V-SUB" Name="SUB array" Type="V-Series" DefaultSubnet="0" PolarFrequency2="2" PolarFrequency3="3" PolarFrequency4="4" PolarFrequency1="1">
+        <Origin z="0" x="0" y="0"/>
+        <TestPoint z="1.7" x="38.88" y="-9"/>
+        <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="0" Delay="0.008591691048256066" VerticalAngle="0" SW5="0" HorizontalAngle="45" SW1="0" Name="V-SUB" Linked="1" PivotAngle="0" Mute="0" SW4="0" CabinetsPerPosition="2">
+            <Origin z="0" x="0.5" y="8"/>
+            <AmplifierChannel InputType="4" Device="7" OutputMode="0" Subnet="0" Name="SUB array 1.05" Type="D80" Channel="2" ChannelName="SUBarray R06-01">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+            <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="0" Delay="0.008591691048256066" VerticalAngle="0" SW5="0" HorizontalAngle="45" SW1="0" Name="V-SUB" Linked="0" PivotAngle="0" Mute="0" SW4="0" CabinetsPerPosition="1">
+                <Origin z="0.622" x="0.01563185488721486" y="7.515631854887215"/>
+                <AmplifierChannel InputType="4" Device="7" OutputMode="0" Subnet="0" Name="SUB array 1.05" Type="D80" Channel="2" ChannelName="SUBarray R06-01">
+                    <InputChannel ChannelId="1" Protocol="1"/>
+                </AmplifierChannel>
+            </Box>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="0" Delay="0.003804480989508214" VerticalAngle="0" SW5="0" HorizontalAngle="15" SW1="0" Name="V-SUB" Linked="1" PivotAngle="0" Mute="0" SW4="0" CabinetsPerPosition="2">
+            <Origin z="0" x="0.5" y="6.545454545454545"/>
+            <AmplifierChannel InputType="4" Device="7" OutputMode="0" Subnet="0" Name="SUB array 1.05" Type="D80" Channel="1" ChannelName="SUBarray R05-01">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+            <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="0" Delay="0.003804480989508214" VerticalAngle="0" SW5="0" HorizontalAngle="15" SW1="0" Name="V-SUB" Linked="0" PivotAngle="0" Mute="0" SW4="0" CabinetsPerPosition="1">
+                <Origin z="0.622" x="-0.1616591910080118" y="6.368163499559318"/>
+                <AmplifierChannel InputType="4" Device="7" OutputMode="0" Subnet="0" Name="SUB array 1.05" Type="D80" Channel="1" ChannelName="SUBarray R05-01">
+                    <InputChannel ChannelId="1" Protocol="1"/>
+                </AmplifierChannel>
+            </Box>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="0" Delay="0.002168974779897493" VerticalAngle="0" SW5="0" HorizontalAngle="0" SW1="0" Name="V-SUB" Linked="1" PivotAngle="0" Mute="0" SW4="0" CabinetsPerPosition="2">
+            <Origin z="0" x="0.5" y="5.090909090909091"/>
+            <AmplifierChannel InputType="4" Device="9" OutputMode="0" Subnet="0" Name="SUB array 0.04" Type="D80" Channel="4" ChannelName="SUBarray R04-01">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+            <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="0" Delay="0.002168974779897493" VerticalAngle="0" SW5="0" HorizontalAngle="0" SW1="0" Name="V-SUB" Linked="0" PivotAngle="0" Mute="0" SW4="0" CabinetsPerPosition="1">
+                <Origin z="0.622" x="-0.1850000000000001" y="5.090909090909091"/>
+                <AmplifierChannel InputType="4" Device="9" OutputMode="0" Subnet="0" Name="SUB array 0.04" Type="D80" Channel="4" ChannelName="SUBarray R04-01">
+                    <InputChannel ChannelId="1" Protocol="1"/>
+                </AmplifierChannel>
+            </Box>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="0" Delay="0.001175377115325244" VerticalAngle="0" SW5="0" HorizontalAngle="0" SW1="0" Name="V-SUB" Linked="1" PivotAngle="0" Mute="0" SW4="0" CabinetsPerPosition="2">
+            <Origin z="0" x="0.5" y="3.636363636363637"/>
+            <AmplifierChannel InputType="4" Device="9" OutputMode="0" Subnet="0" Name="SUB array 0.04" Type="D80" Channel="3" ChannelName="SUBarray R03-01">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+            <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="0" Delay="0.001175377115325244" VerticalAngle="0" SW5="0" HorizontalAngle="0" SW1="0" Name="V-SUB" Linked="0" PivotAngle="0" Mute="0" SW4="0" CabinetsPerPosition="1">
+                <Origin z="0.622" x="-0.1850000000000001" y="3.636363636363637"/>
+                <AmplifierChannel InputType="4" Device="9" OutputMode="0" Subnet="0" Name="SUB array 0.04" Type="D80" Channel="3" ChannelName="SUBarray R03-01">
+                    <InputChannel ChannelId="1" Protocol="1"/>
+                </AmplifierChannel>
+            </Box>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="0" Delay="0.000581156458703728" VerticalAngle="0" SW5="0" HorizontalAngle="0" SW1="0" Name="V-SUB" Linked="1" PivotAngle="0" Mute="0" SW4="0" CabinetsPerPosition="2">
+            <Origin z="0" x="0.5" y="2.181818181818182"/>
+            <AmplifierChannel InputType="4" Device="8" OutputMode="0" Subnet="0" Name="SUB array 1.04" Type="D80" Channel="2" ChannelName="SUBarray R02-01">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+            <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="0" Delay="0.000581156458703728" VerticalAngle="0" SW5="0" HorizontalAngle="0" SW1="0" Name="V-SUB" Linked="0" PivotAngle="0" Mute="0" SW4="0" CabinetsPerPosition="1">
+                <Origin z="0.622" x="-0.1850000000000001" y="2.181818181818182"/>
+                <AmplifierChannel InputType="4" Device="8" OutputMode="0" Subnet="0" Name="SUB array 1.04" Type="D80" Channel="2" ChannelName="SUBarray R02-01">
+                    <InputChannel ChannelId="1" Protocol="1"/>
+                </AmplifierChannel>
+            </Box>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="0" Delay="0.0003" VerticalAngle="0" SW5="0" HorizontalAngle="0" SW1="0" Name="V-SUB" Linked="1" PivotAngle="0" Mute="0" SW4="0" CabinetsPerPosition="2">
+            <Origin z="0" x="0.5" y="0.7272727272727266"/>
+            <AmplifierChannel InputType="4" Device="8" OutputMode="0" Subnet="0" Name="SUB array 1.04" Type="D80" Channel="1" ChannelName="SUBarray R01-01">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+            <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="0" Delay="0.0003" VerticalAngle="0" SW5="0" HorizontalAngle="0" SW1="0" Name="V-SUB" Linked="0" PivotAngle="0" Mute="0" SW4="0" CabinetsPerPosition="1">
+                <Origin z="0.622" x="-0.1850000000000001" y="0.7272727272727266"/>
+                <AmplifierChannel InputType="4" Device="8" OutputMode="0" Subnet="0" Name="SUB array 1.04" Type="D80" Channel="1" ChannelName="SUBarray R01-01">
+                    <InputChannel ChannelId="1" Protocol="1"/>
+                </AmplifierChannel>
+            </Box>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="0" Delay="0.0003" VerticalAngle="0" SW5="0" HorizontalAngle="0" SW1="0" Name="V-SUB" Linked="1" PivotAngle="0" Mute="0" SW4="0" CabinetsPerPosition="2">
+            <Origin z="0" x="0.5" y="-0.7272727272727266"/>
+            <AmplifierChannel InputType="4" Device="9" OutputMode="0" Subnet="0" Name="SUB array 0.04" Type="D80" Channel="1" ChannelName="SUBarray L01-01">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+            <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="0" Delay="0.0003" VerticalAngle="0" SW5="0" HorizontalAngle="0" SW1="0" Name="V-SUB" Linked="0" PivotAngle="0" Mute="0" SW4="0" CabinetsPerPosition="1">
+                <Origin z="0.622" x="-0.1850000000000001" y="-0.7272727272727266"/>
+                <AmplifierChannel InputType="4" Device="9" OutputMode="0" Subnet="0" Name="SUB array 0.04" Type="D80" Channel="1" ChannelName="SUBarray L01-01">
+                    <InputChannel ChannelId="1" Protocol="1"/>
+                </AmplifierChannel>
+            </Box>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="0" Delay="0.000581156458703728" VerticalAngle="0" SW5="0" HorizontalAngle="0" SW1="0" Name="V-SUB" Linked="1" PivotAngle="0" Mute="0" SW4="0" CabinetsPerPosition="2">
+            <Origin z="0" x="0.5" y="-2.181818181818182"/>
+            <AmplifierChannel InputType="4" Device="9" OutputMode="0" Subnet="0" Name="SUB array 0.04" Type="D80" Channel="2" ChannelName="SUBarray L02-01">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+            <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="0" Delay="0.000581156458703728" VerticalAngle="0" SW5="0" HorizontalAngle="0" SW1="0" Name="V-SUB" Linked="0" PivotAngle="0" Mute="0" SW4="0" CabinetsPerPosition="1">
+                <Origin z="0.622" x="-0.1850000000000001" y="-2.181818181818182"/>
+                <AmplifierChannel InputType="4" Device="9" OutputMode="0" Subnet="0" Name="SUB array 0.04" Type="D80" Channel="2" ChannelName="SUBarray L02-01">
+                    <InputChannel ChannelId="1" Protocol="1"/>
+                </AmplifierChannel>
+            </Box>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="0" Delay="0.001175377115325244" VerticalAngle="0" SW5="0" HorizontalAngle="0" SW1="0" Name="V-SUB" Linked="1" PivotAngle="0" Mute="0" SW4="0" CabinetsPerPosition="2">
+            <Origin z="0" x="0.5" y="-3.636363636363637"/>
+            <AmplifierChannel InputType="4" Device="10" OutputMode="0" Subnet="0" Name="SUB array 0.05" Type="D80" Channel="3" ChannelName="SUBarray L03-01">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+            <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="0" Delay="0.001175377115325244" VerticalAngle="0" SW5="0" HorizontalAngle="0" SW1="0" Name="V-SUB" Linked="0" PivotAngle="0" Mute="0" SW4="0" CabinetsPerPosition="1">
+                <Origin z="0.622" x="-0.1850000000000001" y="-3.636363636363637"/>
+                <AmplifierChannel InputType="4" Device="10" OutputMode="0" Subnet="0" Name="SUB array 0.05" Type="D80" Channel="3" ChannelName="SUBarray L03-01">
+                    <InputChannel ChannelId="1" Protocol="1"/>
+                </AmplifierChannel>
+            </Box>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="0" Delay="0.002168974779897493" VerticalAngle="0" SW5="0" HorizontalAngle="0" SW1="0" Name="V-SUB" Linked="1" PivotAngle="0" Mute="0" SW4="0" CabinetsPerPosition="2">
+            <Origin z="0" x="0.5" y="-5.090909090909091"/>
+            <AmplifierChannel InputType="4" Device="10" OutputMode="0" Subnet="0" Name="SUB array 0.05" Type="D80" Channel="4" ChannelName="SUBarray L04-01">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+            <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="0" Delay="0.002168974779897493" VerticalAngle="0" SW5="0" HorizontalAngle="0" SW1="0" Name="V-SUB" Linked="0" PivotAngle="0" Mute="0" SW4="0" CabinetsPerPosition="1">
+                <Origin z="0.622" x="-0.1850000000000001" y="-5.090909090909091"/>
+                <AmplifierChannel InputType="4" Device="10" OutputMode="0" Subnet="0" Name="SUB array 0.05" Type="D80" Channel="4" ChannelName="SUBarray L04-01">
+                    <InputChannel ChannelId="1" Protocol="1"/>
+                </AmplifierChannel>
+            </Box>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="0" Delay="0.003804480989508214" VerticalAngle="0" SW5="0" HorizontalAngle="-15" SW1="0" Name="V-SUB" Linked="1" PivotAngle="0" Mute="0" SW4="0" CabinetsPerPosition="2">
+            <Origin z="0" x="0.5" y="-6.545454545454545"/>
+            <AmplifierChannel InputType="4" Device="10" OutputMode="0" Subnet="0" Name="SUB array 0.05" Type="D80" Channel="1" ChannelName="SUBarray L05-01">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+            <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="0" Delay="0.003804480989508214" VerticalAngle="0" SW5="0" HorizontalAngle="-15" SW1="0" Name="V-SUB" Linked="0" PivotAngle="0" Mute="0" SW4="0" CabinetsPerPosition="1">
+                <Origin z="0.622" x="-0.1616591910080118" y="-6.368163499559318"/>
+                <AmplifierChannel InputType="4" Device="10" OutputMode="0" Subnet="0" Name="SUB array 0.05" Type="D80" Channel="1" ChannelName="SUBarray L05-01">
+                    <InputChannel ChannelId="1" Protocol="1"/>
+                </AmplifierChannel>
+            </Box>
+        </Box>
+        <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="0" Delay="0.008591691048256066" VerticalAngle="0" SW5="0" HorizontalAngle="-45" SW1="0" Name="V-SUB" Linked="1" PivotAngle="0" Mute="0" SW4="0" CabinetsPerPosition="2">
+            <Origin z="0" x="0.5" y="-8"/>
+            <AmplifierChannel InputType="4" Device="10" OutputMode="0" Subnet="0" Name="SUB array 0.05" Type="D80" Channel="2" ChannelName="SUBarray L06-01">
+                <InputChannel ChannelId="1" Protocol="1"/>
+            </AmplifierChannel>
+            <Box RotationAngle="0" SW3="0" ControllerType="0" Level="0" TestPointIndex="0" SW2="0" SplayAngle="0" Delay="0.008591691048256066" VerticalAngle="0" SW5="0" HorizontalAngle="-45" SW1="0" Name="V-SUB" Linked="0" PivotAngle="0" Mute="0" SW4="0" CabinetsPerPosition="1">
+                <Origin z="0.622" x="0.01563185488721486" y="-7.515631854887215"/>
+                <AmplifierChannel InputType="4" Device="10" OutputMode="0" Subnet="0" Name="SUB array 0.05" Type="D80" Channel="2" ChannelName="SUBarray L06-01">
+                    <InputChannel ChannelId="1" Protocol="1"/>
+                </AmplifierChannel>
+            </Box>
+        </Box>
+    </SubArray>
+</SubArrays>

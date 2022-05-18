@@ -1,0 +1,87 @@
+<!DOCTYPE ArrayCalc>
+<ArrayCalc Version="10.24.1">
+    <Project Name="Untitled">
+        <Date>18.05.2022</Date>
+        <Author>evgenytolmachev</Author>
+        <Comments>12x V8 + 4 x V12 Main array
+08x V8 Outfill
+24x V-SUB SUB array 
+04x Y10P Frontfill</Comments>
+    </Project>
+    <Venue Version="9">
+        <Comments></Comments>
+        <RoomObject Enabled="1" PlaneType="1" ParentVenueObjectId="0" OrderIndex="1" Locked="0" PrintColor="4278190080" Color="4281636817" Name="Floor" Shape="1" Transparent="1" ListenerHeight="1.7">
+            <Origin z="0" x="1.78" y="0"/>
+            <Rotation z="0" x="0" y="0"/>
+            <Scaling z="1" x="1" y="1"/>
+            <P1 z="0" x="0" y="20"/>
+            <P2 z="0" x="53" y="20"/>
+            <P3 z="0" x="53" y="-20"/>
+            <P4 z="0" x="0" y="-20"/>
+        </RoomObject>
+        <RoomObject Enabled="1" SpanAngle="90" InnerRadiusA="0" OrderIndex="2" ListenerHeight="1.7" PrintColor="4294945280" StartAngle="315" OuterRadiusA="25" Shape="2" OuterZ="7" Locked="0" Transparent="1" OuterRadiusB="25" PlaneType="1" InnerZ="0" Name="Left Corner" ParentVenueObjectId="0" InnerRadiusB="0" Color="4294901760">
+            <Origin z="0" x="55" y="20"/>
+            <Rotation z="45" x="0" y="0"/>
+            <Scaling z="1" x="1" y="1"/>
+        </RoomObject>
+        <RoomObject Enabled="1" PlaneType="1" ParentVenueObjectId="0" OrderIndex="3" Locked="0" PrintColor="4294945280" Color="4278233600" Name="Right" Shape="1" Transparent="1" ListenerHeight="1.7">
+            <Origin z="0" x="28.40000000000003" y="-20"/>
+            <Rotation z="-90" x="0" y="0"/>
+            <Scaling z="1" x="1" y="1"/>
+            <P1 z="0" x="0" y="26.2102117035701"/>
+            <P2 z="7" x="25" y="26.2102117035701"/>
+            <P3 z="7" x="25" y="-26.21021170357009"/>
+            <P4 z="0" x="0" y="-26.2102117035701"/>
+        </RoomObject>
+        <RoomObject Enabled="1" SpanAngle="90" InnerRadiusA="0" OrderIndex="4" ListenerHeight="1.7" PrintColor="4294945280" StartAngle="315" OuterRadiusA="25" Shape="2" OuterZ="7" Locked="0" Transparent="1" OuterRadiusB="25" PlaneType="1" InnerZ="0" Name="Right Corner" ParentVenueObjectId="0" InnerRadiusB="0" Color="4294901760">
+            <Origin z="0" x="55" y="-20"/>
+            <Rotation z="-45" x="0" y="0"/>
+            <Scaling z="1" x="1" y="1"/>
+        </RoomObject>
+        <RoomObject Enabled="1" PlaneType="1" ParentVenueObjectId="0" OrderIndex="5" Locked="0" PrintColor="4294945280" Color="4294945280" Name="Back" Shape="1" Transparent="1" ListenerHeight="1.7">
+            <Origin z="0" x="55" y="0"/>
+            <Rotation z="0" x="0" y="0"/>
+            <Scaling z="1" x="1" y="1"/>
+            <P1 z="0" x="0" y="20"/>
+            <P2 z="7" x="25" y="20"/>
+            <P3 z="7" x="25" y="-20"/>
+            <P4 z="0" x="0" y="-20"/>
+        </RoomObject>
+        <RoomObject Enabled="1" PlaneType="1" ParentVenueObjectId="0" OrderIndex="6" Locked="0" PrintColor="4294945280" Color="4278233600" Name="Left" Shape="1" Transparent="1" ListenerHeight="1.7">
+            <Origin z="0" x="28.40000000000003" y="20"/>
+            <Rotation z="90" x="0" y="0"/>
+            <Scaling z="1" x="1" y="1"/>
+            <P1 z="0" x="0" y="26.2102117035701"/>
+            <P2 z="7" x="25" y="26.21021170357009"/>
+            <P3 z="7" x="25" y="-26.2102117035701"/>
+            <P4 z="0" x="0" y="-26.2102117035701"/>
+        </RoomObject>
+        <RoomObject Enabled="1" PlaneType="4" ParentVenueObjectId="0" OrderIndex="7" Locked="0" PrintColor="4294945280" Color="4294709521" Name="CableRun Delay" Shape="1" Transparent="1" ListenerHeight="0.01">
+            <Origin z="0" x="0" y="0"/>
+            <Rotation z="0" x="0" y="0"/>
+            <Scaling z="1" x="1" y="1"/>
+            <P1 z="0" x="0" y="0"/>
+            <P2 z="0" x="0" y="20"/>
+            <P3 z="0" x="0" y="0"/>
+            <P4 z="0" x="0" y="0"/>
+        </RoomObject>
+        <RoomObject Enabled="1" PlaneType="4" ParentVenueObjectId="0" OrderIndex="8" Locked="0" PrintColor="4294945280" Color="4294945280" Name="CableRun Delay 1" Shape="1" Transparent="1" ListenerHeight="0.01">
+            <Origin z="0" x="-0.07000000000000001" y="20.01"/>
+            <Rotation z="-90" x="0" y="0"/>
+            <Scaling z="1" x="1" y="1"/>
+            <P1 z="0" x="0" y="0"/>
+            <P2 z="0" x="3.061616997868383e-15" y="50"/>
+            <P3 z="0" x="3.061616997868383e-15" y="30"/>
+            <P4 z="0" x="0" y="0"/>
+        </RoomObject>
+        <RoomObject Enabled="1" PlaneType="4" ParentVenueObjectId="0" OrderIndex="9" Locked="0" PrintColor="4294945280" Color="4294945280" Name="Stage" Shape="1" Transparent="1" ListenerHeight="0.01">
+            <Origin z="0" x="-11.95" y="-0.11"/>
+            <Rotation z="0" x="0" y="0"/>
+            <Scaling z="1" x="1" y="1"/>
+            <P1 z="1.8" x="0" y="15.03917891959217"/>
+            <P2 z="1.8" x="10" y="15.03917891959217"/>
+            <P3 z="1.8" x="10" y="-15.03917891959217"/>
+            <P4 z="1.8" x="0" y="-15.03917891959217"/>
+        </RoomObject>
+    </Venue>
+</ArrayCalc>
