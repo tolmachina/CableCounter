@@ -93,12 +93,14 @@ def get_cable_number(data:dict[str,Any]):
 
     cable_numbers: dict[str, Any] = {
         "TypeSpeakers": data['Speaker'],
-        "EP5": num_ep5_cables_total,
-        "Soca": num_soca_cables_total,
-        "ThreeLegFanOut": num_lines['Calamary'],
-        "SixLegFanOut": num_lines['Octopus'],
-        "Distance": distance_to_hang,
-        "NumSpeakers": data['Num_speakers']      
+        "EP5": int(num_ep5_cables_total),
+        "Soca": int(num_soca_cables_total),
+        "ThreeLegFanOut": int(num_lines['Calamary']),
+        "SixLegFanOut": int(num_lines['Octopus']),
+        "Distance": float(distance_to_hang),
+        "NumSpeakers": int(data['Num_speakers']),
+        "BiampLines": int(biamp_lines),
+        "OneAmpLines": int(one_amp_lines)      
         }
     return cable_numbers
 
@@ -142,12 +144,12 @@ def get_lines(data: Dict[str, Any]):
     one_amp_lines: int = 0
     for speaker in data['Speaker']:
         if speaker.upper() in BIAMP_UNLINKABLE:
-            biamp_lines += data['Speaker'][speaker.upper()]
+            biamp_lines += int(data['Speaker'][speaker.upper()])
         elif speaker.upper() in BIAMP_LINKABLE:
-            biamp_lines += data['Speaker'][speaker.upper()] - data['Links']
+            biamp_lines += int(data['Speaker'][speaker.upper()] - data['Links'])
         else:
             if data['Speaker'][speaker] != 0:
-                one_amp_lines += data['Speaker'][speaker] - data['Links']
+                one_amp_lines += int(data['Speaker'][speaker] - data['Links'])
     return biamp_lines, one_amp_lines
 
 

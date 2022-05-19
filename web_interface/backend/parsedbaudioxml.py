@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 import xml.etree.ElementTree as ET
 
 class ParserDBAudioSpeakerXML():
@@ -30,8 +31,6 @@ class ParserDBAudioSpeakerXML():
     def populate_hang_data(self):
         for array in self.root:
             self.hang_data['Name'] = array.tag
-            
-            
             for array_part in array:
                 if array_part.tag == 'Box':
                     if array_part.attrib["Name"] in self.hang_data["Speaker"]:
@@ -69,12 +68,15 @@ class ParserDBAudioSpeakerXML():
         
         return self.hang_data
     
+@dataclass
+class Plane:
+    pass
 
 class ParseDBAudioVenueXML():
     def __init__(self, filename) -> None:
         tree = ET.parse(filename)
         self.root = tree.getroot()
-        self.hang_data = {
+        self.venue_data = {
         'Name': None,
         'Hang': [],
         'Speaker': {},

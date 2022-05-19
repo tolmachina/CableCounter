@@ -2,8 +2,10 @@ import subprocess
 import os
 from unittest import result
 from flask import Flask, jsonify, render_template, flash, request, redirect, send_from_directory, json
+from numpy import int64
 from werkzeug.utils import secure_filename
 from backend import CableCounter as cc
+from backend.parsedbaudioxml import ParserDBAudioSpeakerXML
 
 SECRET_KEY = "4800188e5667c9fe099638602cd209752bd8a01bf7a5dc3c53aaa6d5afcce214"
 UPLOAD_FOLDER = os.path.join('web_interface', 'uploaded_by_user') 
@@ -36,7 +38,7 @@ def upload_file():
         # If the user does not select a file, the browser submits an
         # empty file without a filename.
         if file_pdf.filename == '' or file_anchor.filename =='':
-            flash('No selected file')
+            flash('No selected files')
             return redirect(request.url)
         
         if file_pdf and allowed_file(file_pdf.filename) and file_anchor and allowed_file(file_anchor.filename):
@@ -59,10 +61,11 @@ def upload_file():
                 os.remove(filename_pdf)
             else:
                 print("The file does not exist")
-            print("DATA\n", data)
+            
             return render_template('result.html', jsonfile=json.dumps(data))
     else:
         return render_template('index.html')
+
 
 @app.route('/uploads/<name>')
 def download_file(name):

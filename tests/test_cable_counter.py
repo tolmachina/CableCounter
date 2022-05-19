@@ -86,6 +86,10 @@ class TestGetDistanceToHang():
     def test_negative_anchors(self):
         assert get_distance_to_hang([10, -20, 5], [[0, -5,0], [10, -5, 0], [10, -20, 0]]) == 30
 
-
+    def test_from_ceiling(self):
+        hang = [2.0, 14.3, 5.0]
+        anchors = [[0.0, 0.0, 0.0], [0.0, 11.0, 0.0], [0.0, 11.0, 14.0], [2.0, 14.0, 14.0]]
+        assert get_distance_to_hang(hang, anchors) == 39.3
+    
 
     
