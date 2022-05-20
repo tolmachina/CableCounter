@@ -8,4 +8,4 @@ https://www.dbaudio.com/global/en/applications/all/touring-concerts/
 
 TODO:
 - work on web inteface
-- publish on Heroku
+- publish on AWS done

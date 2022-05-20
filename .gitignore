@@ -3,6 +3,7 @@ SetupData
 *.pdf
 .DS_Store
 .idea
+.pytest_cache
 macair_dev_env
 .vscode
 __pycache__
