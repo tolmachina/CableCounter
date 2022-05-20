@@ -8,8 +8,8 @@ SOCA_LEN = 25  # soca cable meters
 EP5_LEN = 10  # ep5 cable meters
 FAN_OUT_3_LEGS = 3  # cable breakout for 3 biamp legs
 FAN_OUT_6_LEGS = 6  # cable breakout for 6 oneamp legs
-TEMPLATE_PATH = 'web_interface/Main_Setup.tabula-template.json'
-ANCHORS_PATH = "web_interface/anchors.csv"
+TEMPLATE_PATH = 'Main_Setup.tabula-template.json'
+ANCHORS_PATH = "anchors.csv"
 
 BIAMP_LINKABLE: set[str] = {'J-TOP', 'KSL-TOP','J8', 'J12', 'KSL8', 'KSL12', 'XSL8','XSL12'}
 

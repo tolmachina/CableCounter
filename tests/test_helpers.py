@@ -1,4 +1,4 @@
-from web_interface.helpers.helper_functions import allowed_file
+from ..helpers.helper_functions import allowed_file
 
 def test_allowed_file():
     good_file = 'speaker.pdf'

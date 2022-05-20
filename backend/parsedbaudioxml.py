@@ -128,6 +128,3 @@ def dist(x1, y1, x2, y2, x3, y3): # x3,y3 is the point
     dist = (dx*dx + dy*dy)**.5
 
     return dist
-
-venue = ParseDBAudioVenueXML("web_interface/backend/test_data/speaker_data_xml/venue.dbacv")
-venue.print_test()

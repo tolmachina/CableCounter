@@ -8,15 +8,15 @@ from backend import CableCounter as cc
 from backend.parsedbaudioxml import ParserDBAudioSpeakerXML
 
 SECRET_KEY = "4800188e5667c9fe099638602cd209752bd8a01bf7a5dc3c53aaa6d5afcce214"
-UPLOAD_FOLDER = os.path.join('web_interface', 'uploaded_by_user') 
+UPLOAD_FOLDER = os.path.join('uploaded_by_user') 
 ALLOWED_EXTENSIONS= {'pdf', 'csv', 'xlsx', 'dbea', 'dbep', 'dbesa', 'dbacv'}
 
 
-app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config['MAX_CONTENT_LENGTH'] = 500 * 1000
-app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
-app.secret_key = SECRET_KEY
+application = Flask(__name__)
+application.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+application.config['MAX_CONTENT_LENGTH'] = 500 * 1000
+application.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
+application.secret_key = SECRET_KEY
 
 
 def allowed_file(filename):
@@ -24,7 +24,7 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-@app.route('/', methods=['GET', 'POST'])
+@application.route('/', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
         # check if the post request has the file part
@@ -47,12 +47,12 @@ def upload_file():
         return render_template('index.html')
 
 
-@app.route('/uploads/<name>')
+@application.route('/uploads/<name>')
 def download_file(name):
-    return send_from_directory(app.config["UPLOAD_FOLDER"], name)
+    return send_from_directory(application.config["UPLOAD_FOLDER"], name)
 
 
-@app.route('/result')
+@application.route('/result')
 def show_result():
     return render_template('result.html')
 
@@ -61,8 +61,8 @@ def process_pdf_csv_files(file_pdf, file_anchor):
     filename_pdf = secure_filename(file_pdf.filename)
     filename_anchor = secure_filename(file_anchor.filename)
             
-    filename_pdf = os.path.join(app.config['UPLOAD_FOLDER'], filename_pdf)
-    filename_anchor = os.path.join(app.config['UPLOAD_FOLDER'], filename_anchor)
+    filename_pdf = os.path.join(application.config['UPLOAD_FOLDER'], filename_pdf)
+    filename_anchor = os.path.join(application.config['UPLOAD_FOLDER'], filename_anchor)
 
     file_pdf.save(filename_pdf)
     file_anchor.save(filename_anchor)
@@ -76,4 +76,4 @@ def process_pdf_csv_files(file_pdf, file_anchor):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)    
+    application.run(debug=True)    

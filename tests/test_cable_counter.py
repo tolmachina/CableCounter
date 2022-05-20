@@ -1,7 +1,6 @@
-import sys
-from web_interface.backend.CableCounter import get_cable_number, get_lines, get_distance_to_hang, get_anchors_from_file
+from ..backend.CableCounter import get_cable_number, get_lines, get_distance_to_hang, get_anchors_from_file
 
-from web_interface.backend.parsedbaudioxml import ParserDBAudioSpeakerXML
+from ..backend.parsedbaudioxml import ParserDBAudioSpeakerXML
 
 hang_origin = [33.0, 6.0, 9.5]
 anchors = [[10, 0, 0], [0,3,0], [0,0,10]]
@@ -63,7 +62,7 @@ class TestCableCounter():
         get_cable_number(test_data)
     
     def test_print_delay_8y(self):
-        parser = ParserDBAudioSpeakerXML('web_interface/backend/test_data/speaker_data_xml/delay8y.dbea')
+        parser = ParserDBAudioSpeakerXML('backend/test_data/speaker_data_xml/delay8y.dbea')
         print(parser.populate_hang_data())
 
     
