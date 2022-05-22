@@ -1,7 +1,6 @@
 import csv
-from tkinter import Variable
-from tabula import read_pdf_with_template
 from typing import Any, List, Dict
+from backend.parsedbaudioxml import ParserDBAudioSpeakerXML
 
 C = 13.5  # ceiling meters high
 SOCA_LEN = 25  # soca cable meters
@@ -15,10 +14,19 @@ BIAMP_LINKABLE: set[str] = {'J-TOP', 'KSL-TOP','J8', 'J12', 'KSL8', 'KSL12', 'XS
 
 BIAMP_UNLINKABLE: set[str] = {'J-SUB', 'GSL-TOP', 'GSL-SUB', 'KSL-SUB', 'GSL8', 'GSL12'}
 
+def get_data_dbea(speaker_filename,anchors_file_path=ANCHORS_PATH ):
+    parser = ParserDBAudioSpeakerXML(speaker_filename)
+    hang = parser.populate_hang_data()
+    anchors = get_anchors_from_file(anchors_file_path)
+    hang['Anchors'] = anchors
+    return hang
+
+
 def get_data_pdf(filepath, anchors_file_path=ANCHORS_PATH):
-    df = read_pdf_with_template(filepath,
-                                TEMPLATE_PATH,
-                                pandas_options={'header': None})
+    # df = read_pdf_with_template(filepath,
+    #                             TEMPLATE_PATH,
+    #                             pandas_options={'header': None})
+    df = None
     for t in df:
         print(t)
 

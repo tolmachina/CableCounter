@@ -1,11 +1,8 @@
-import subprocess
 import os
-from unittest import result
-from flask import Flask, jsonify, render_template, flash, request, redirect, send_from_directory, json
+from flask import Flask, render_template, flash, request, redirect, send_from_directory, json
 from numpy import int64
 from werkzeug.utils import secure_filename
 from backend import CableCounter as cc
-from backend.parsedbaudioxml import ParserDBAudioSpeakerXML
 
 SECRET_KEY = "4800188e5667c9fe099638602cd209752bd8a01bf7a5dc3c53aaa6d5afcce214"
 UPLOAD_FOLDER = os.path.join('uploaded_by_user') 
@@ -28,19 +25,20 @@ def allowed_file(filename):
 def upload_file():
     if request.method == 'POST':
         # check if the post request has the file part
-        if 'file_pdf' not in request.files and "anchor_file" not in request.files:
+        if 'file_speaker' not in request.files and "anchor_file" not in request.files:
             flash('Both files not found in request')
             return redirect(request.url)
         
-        file_pdf = request.files['file_pdf']
-        file_anchor = request.files['file_anchor']
+        file_speaker = (request.files['file_speaker'])
+        file_anchor = (request.files['file_anchor'])
 
-        if file_pdf.filename == '' or file_anchor.filename =='':
+        if file_speaker.filename == '' or file_anchor.filename =='':
             flash('No selected files')
             return redirect(request.url)
         
-        if file_pdf and allowed_file(file_pdf.filename) and file_anchor and allowed_file(file_anchor.filename):
-            data = process_pdf_csv_files(file_pdf, file_anchor)
+        if file_speaker and allowed_file(file_speaker.filename) and file_anchor and allowed_file(file_anchor.filename):
+        
+            data = process_files(file_speaker, file_anchor)
             
             return render_template('result.html', jsonfile=json.dumps(data))
     else:
@@ -56,23 +54,50 @@ def download_file(name):
 def show_result():
     return render_template('result.html')
 
+def process_files(speaker_file, anchor_file):
+    
 
-def process_pdf_csv_files(file_pdf, file_anchor):
-    filename_pdf = secure_filename(file_pdf.filename)
-    filename_anchor = secure_filename(file_anchor.filename)
-            
-    filename_pdf = os.path.join(application.config['UPLOAD_FOLDER'], filename_pdf)
-    filename_anchor = os.path.join(application.config['UPLOAD_FOLDER'], filename_anchor)
+    def process_dbea_csv_files(file_dbea, file_anchor):
+                
+        filename_speaker = os.path.join(application.config['UPLOAD_FOLDER'], file_dbea.filename)
+        filename_anchor = os.path.join(application.config['UPLOAD_FOLDER'], file_anchor.filename)
 
-    file_pdf.save(filename_pdf)
-    file_anchor.save(filename_anchor)
+        file_dbea.save(filename_speaker)
+        file_anchor.save(filename_anchor)
 
-    data = cc.get_cable_number(cc.get_data_pdf(filepath= filename_pdf, anchors_file_path= filename_anchor))
-    if os.path.exists(filename_pdf):
-        os.remove(filename_pdf)
+        processed_speaker_file = cc.get_data_dbea(filepath= filename_speaker, anchors_file_path= filename_anchor)
+
+        data = cc.get_cable_number(processed_speaker_file)
+        if os.path.exists(filename_speaker):
+            os.remove(filename_speaker)
+        else:
+            print("The file does not exist")
+        return data
+
+
+    def process_pdf_csv_files(file_pdf, file_anchor):
+        filename_pdf = os.path.join(application.config['UPLOAD_FOLDER'], file_pdf)
+        filename_anchor = os.path.join(application.config['UPLOAD_FOLDER'], file_anchor)
+
+        file_pdf.save(filename_pdf)
+        file_anchor.save(filename_anchor)
+
+        data = cc.get_cable_number(cc.get_data_pdf(filepath= filename_pdf, anchors_file_path= filename_anchor))
+        if os.path.exists(filename_pdf):
+            os.remove(filename_pdf)
+        else:
+            print("The file does not exist")
+        return data
+    
+    speaker_filename = secure_filename(speaker_file.filename)
+    anchor_filename = secure_filename(anchor_file.filename)
+    if speaker_filename.lower().endswith('.pdf'):
+        process_pdf_csv_files(speaker_file, anchor_file)
+    elif speaker_filename.lower().endswith('.dbea'):
+        process_dbea_csv_files(speaker_file, anchor_file)
     else:
-        print("The file does not exist")
-    return data
+        flash('Wrong file extension')
+        raise ValueError('Wrong file extension')
 
 
 if __name__ == "__main__":
