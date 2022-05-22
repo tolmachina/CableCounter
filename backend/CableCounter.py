@@ -14,7 +14,7 @@ BIAMP_LINKABLE: set[str] = {'J-TOP', 'KSL-TOP','J8', 'J12', 'KSL8', 'KSL12', 'XS
 
 BIAMP_UNLINKABLE: set[str] = {'J-SUB', 'GSL-TOP', 'GSL-SUB', 'KSL-SUB', 'GSL8', 'GSL12'}
 
-def get_data_dbea(speaker_filename,anchors_file_path=ANCHORS_PATH ):
+def get_data_dbea(speaker_filename, anchors_file_path=ANCHORS_PATH ):
     parser = ParserDBAudioSpeakerXML(speaker_filename)
     hang = parser.populate_hang_data()
     anchors = get_anchors_from_file(anchors_file_path)
@@ -26,6 +26,7 @@ def get_data_pdf(filepath, anchors_file_path=ANCHORS_PATH):
     # df = read_pdf_with_template(filepath,
     #                             TEMPLATE_PATH,
     #                             pandas_options={'header': None})
+    assert False
     df = None
     for t in df:
         print(t)
@@ -51,7 +52,7 @@ def get_data_pdf(filepath, anchors_file_path=ANCHORS_PATH):
         speakers['J-TOP'] = speakers['J8'] + speakers['J12']
         speakers.pop('J8')
         speakers.pop('J12')
-    except:
+    except KeyError:
         print('no J in speakers')
 
     links = df[3][7].isna().sum()
@@ -95,9 +96,6 @@ def get_cable_number(data:dict[str,Any]):
             num_ep5_cables_inline += 1
         num_ep5_cables_total = num_ep5_cables_inline * num_lines['EP5']
 
-    for anchor in data['Anchors']:
-        if anchor != data['Anchors'][0]:
-            print(anchor)
 
     cable_numbers: dict[str, Any] = {
         "TypeSpeakers": data['Speaker'],
@@ -119,11 +117,11 @@ def get_anchors_from_file(anchors_file_path: str):
         dialect = csv.Sniffer().sniff(csvfile.read(1024))
         csvfile.seek(0)
         anchor_reader = csv.reader(csvfile, dialect)
-        print(dialect)
+
         for row in anchor_reader:
             row = list(map(float, row))
             anchors.append(row)
-    print(anchors)
+
     return anchors
 
 
@@ -143,7 +141,6 @@ def get_distance_to_hang(hang: list[float], anchors:list[list[float]]) -> float:
             delta += abs(anchors[i][j] - anchors[i + 1][j])
     for d in range(len(anchors[-1])):
         delta += abs(anchors[-1][d] - hang[d])
-    print(delta)
     return delta
 
 
@@ -157,7 +154,13 @@ def get_lines(data: Dict[str, Any]):
             biamp_lines += int(data['Speaker'][speaker.upper()] - data['Links'])
         else:
             if data['Speaker'][speaker] != 0:
-                one_amp_lines += int(data['Speaker'][speaker] - data['Links'])
+                one_amp_lines += int(data['Speaker'][speaker])
+    if one_amp_lines:
+        one_amp_lines -= int(data['Links'])
+    if biamp_lines:
+        biamp_lines -= int(data['Links'])
+    assert (biamp_lines != one_amp_lines)
+   
     return biamp_lines, one_amp_lines
 
 

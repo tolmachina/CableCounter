@@ -20,6 +20,7 @@ DEFAULT_HANG = {
         'Flown': flown
         }
 
+
 class TestCableCounter():
     def test_get_lines(self):
         biamp, oneamp = get_lines(DEFAULT_HANG)
@@ -39,7 +40,6 @@ class TestCableCounter():
             'Anchors': anchors}  # all data in one dict
         biamp, oneamp = get_lines(test_4_j_subs)
         assert biamp == 4
-
 
     def test_get_cable_number(self):
         hang = [4.2, 11.5, 10.0]  # x y z coordinates of hang

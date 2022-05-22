@@ -55,7 +55,6 @@ def show_result():
     return render_template('result.html')
 
 def process_files(speaker_file, anchor_file):
-    
 
     def process_dbea_csv_files(file_dbea, file_anchor):
                 
@@ -65,13 +64,14 @@ def process_files(speaker_file, anchor_file):
         file_dbea.save(filename_speaker)
         file_anchor.save(filename_anchor)
 
-        processed_speaker_file = cc.get_data_dbea(filepath= filename_speaker, anchors_file_path= filename_anchor)
-
+        processed_speaker_file = cc.get_data_dbea(filename_speaker, filename_anchor)
+        print(processed_speaker_file)
         data = cc.get_cable_number(processed_speaker_file)
+
         if os.path.exists(filename_speaker):
             os.remove(filename_speaker)
         else:
-            print("The file does not exist")
+            raise OSError("The file does not exist")
         return data
 
 
