@@ -10,9 +10,9 @@ FAN_OUT_6_LEGS = 6  # cable breakout for 6 oneamp legs
 TEMPLATE_PATH = 'Main_Setup.tabula-template.json'
 ANCHORS_PATH = "anchors.csv"
 
-BIAMP_LINKABLE: set[str] = {'J-TOP', 'KSL-TOP','J8', 'J12', 'KSL8', 'KSL12', 'XSL8','XSL12'}
+BIAMP_LINKABLE = {'J-TOP', 'KSL-TOP','J8', 'J12', 'KSL8', 'KSL12', 'XSL8','XSL12'}
 
-BIAMP_UNLINKABLE: set[str] = {'J-SUB', 'GSL-TOP', 'GSL-SUB', 'KSL-SUB', 'GSL8', 'GSL12'}
+BIAMP_UNLINKABLE = {'J-SUB', 'GSL-TOP', 'GSL-SUB', 'KSL-SUB', 'GSL8', 'GSL12'}
 
 def get_data_dbea(speaker_filename, anchors_file_path=ANCHORS_PATH ):
     parser = ParserDBAudioSpeakerXML(speaker_filename)
