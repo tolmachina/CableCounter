@@ -8,4 +8,5 @@ macair_dev_env
 .vscode
 __pycache__
 web_interface/uploaded_by_user
+airenv
 

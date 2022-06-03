@@ -39,7 +39,7 @@ def upload_file():
         if file_speaker and allowed_file(file_speaker.filename) and file_anchor and allowed_file(file_anchor.filename):
         
             data = process_files(file_speaker, file_anchor)
-            
+            print("FINAL DATA", data)
             return render_template('result.html', jsonfile=json.dumps(data))
     else:
         return render_template('index.html')
@@ -65,9 +65,9 @@ def process_files(speaker_file, anchor_file):
         file_anchor.save(filename_anchor)
 
         processed_speaker_file = cc.get_data_dbea(filename_speaker, filename_anchor)
-        print(processed_speaker_file)
+        print("Proccesd dbea file\n", processed_speaker_file, "\n")
         data = cc.get_cable_number(processed_speaker_file)
-
+        print("Get cable number result", data)
         if os.path.exists(filename_speaker):
             os.remove(filename_speaker)
         else:
@@ -91,14 +91,15 @@ def process_files(speaker_file, anchor_file):
     
     speaker_filename = secure_filename(speaker_file.filename)
     anchor_filename = secure_filename(anchor_file.filename)
+    
     if speaker_filename.lower().endswith('.pdf'):
-        process_pdf_csv_files(speaker_file, anchor_file)
+        cable_numbers_table = process_pdf_csv_files(speaker_file, anchor_file)
     elif speaker_filename.lower().endswith('.dbea'):
-        process_dbea_csv_files(speaker_file, anchor_file)
+        cable_numbers_table = process_dbea_csv_files(speaker_file, anchor_file)
     else:
         flash('Wrong file extension')
         raise ValueError('Wrong file extension')
-
+    return cable_numbers_table
 
 if __name__ == "__main__":
     application.run(debug=True)    
