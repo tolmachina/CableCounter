@@ -102,4 +102,4 @@ def process_files(speaker_file, anchor_file):
     return cable_numbers_table
 
 if __name__ == "__main__":
-    application.run(debug=True)    
+    application.run(debug=False)    

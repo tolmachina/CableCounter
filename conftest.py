@@ -1,5 +1,3 @@
-import pytest
-
 # from ..application import application as flask_app
 
 # @pytest.fixture
