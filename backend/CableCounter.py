@@ -1,5 +1,5 @@
 import csv
-from typing import Any, List, Dict
+from typing import Any, List, Dict, Set
 from backend.parsedbaudioxml import ParserDBAudioSpeakerXML
 
 C = 13.5  # ceiling meters high
@@ -75,7 +75,7 @@ def get_data_pdf(filepath, anchors_file_path=ANCHORS_PATH):
     return data_from_pdf
 
 
-def get_cable_number(data:dict[str,Any]):
+def get_cable_number(data:Dict[str,Any]):
     # parsing data to variables
 
     distance_to_hang = get_distance_to_hang(data['Hang'], data['Anchors'])
@@ -97,7 +97,7 @@ def get_cable_number(data:dict[str,Any]):
         num_ep5_cables_total = num_ep5_cables_inline * num_lines['EP5']
 
 
-    cable_numbers: dict[str, Any] = {
+    cable_numbers: Dict[str, Any] = {
         "TypeSpeakers": data['Speaker'],
         "EP5": int(num_ep5_cables_total),
         "Soca": int(num_soca_cables_total),
@@ -125,7 +125,7 @@ def get_anchors_from_file(anchors_file_path: str):
     return anchors
 
 
-def get_distance_to_hang(hang: list[float], anchors:list[list[float]]) -> float:
+def get_distance_to_hang(hang: List[float], anchors:List[List[float]]):
     """
     Args:
         hang (list[float]): Position in x, y, z coordinates.

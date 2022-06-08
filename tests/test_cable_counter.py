@@ -1,11 +1,11 @@
 import os
+from typing import Dict
 from backend.CableCounter import get_cable_number, get_lines, get_distance_to_hang, get_anchors_from_file
-
 from backend.parsedbaudioxml import ParserDBAudioSpeakerXML
 
 hang_origin = [33.0, 6.0, 9.5]
 anchors = [[10, 0, 0], [0,3,0], [0,0,10]]
-speaker_type: dict[str,int] = {'Q-SUB': 0, 'Q1': 5, 'Q7': 0}
+speaker_type: Dict[str,int] = {'Q-SUB': 0, 'Q1': 5, 'Q7': 0}
 num_of_speakers = 5
 all_linked = False
 links = 3
@@ -20,7 +20,6 @@ DEFAULT_HANG = {
         'Anchors': anchors,
         'Flown': flown
         }
-
 
 class TestCableCounter():
     def test_get_lines(self):
