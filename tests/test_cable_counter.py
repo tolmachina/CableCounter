@@ -1,6 +1,6 @@
 import os
 from typing import Dict
-from backend.CableCounter import get_cable_number, get_lines, get_distance_to_hang, get_anchors_from_file
+from backend.CableCounter import get_cables_amounts, get_lines, get_distance_to_hang, get_anchors_from_file
 from backend.parsedbaudioxml import ParserDBAudioSpeakerXML
 
 hang_origin = [33.0, 6.0, 9.5]
@@ -47,19 +47,19 @@ class TestCableCounter():
         num_speakers = 4  # num of cabinets
         anchors = [[1, 6, 0],[0, 8, 0], [0, 8, 13], [4, 12, 13]]
         test_data = {'Hang': hang, 'Speaker': speaker, 'Num_speakers': num_speakers, 'Links': False, 'Anchors': anchors}  # all data in one dict
-        get_cable_number(test_data)
+        get_cables_amounts(test_data)
         
         hang = [8, 40, 10.0]  # x y z coordinates of hang
         speaker = {'J-TOP': 8}  # type of speaker
         num_speakers = 8  # num of cabinets
         test_data = {'Hang': hang, 'Speaker': speaker, 'Num_speakers': num_speakers, 'Links': True, 'Anchors': anchors}  # all data in one dict
-        get_cable_number(test_data)
+        get_cables_amounts(test_data)
         
         hang = [0., 0., 13.5]  # x y z coordinates of hang
         speaker = {'Y10': 7}  # type of speaker
         num_speakers = 7  # num of cabinets
         test_data = {'Hang': hang, 'Speaker': speaker, 'Num_speakers': num_speakers, 'Links': False, 'Anchors': anchors}  # all data in one dict
-        get_cable_number(test_data)
+        get_cables_amounts(test_data)
     
     def test_print_delay_8y(self):
         test_folder = os.path.join("tests", "speaker_data_xml")

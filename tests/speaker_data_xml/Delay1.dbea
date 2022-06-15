@@ -1,0 +1,195 @@
+<!DOCTYPE ArrayCalc>
+<MainArrays Version="6">
+    <MainArray Mute="0" Name="Delay1" CPL="-1" ShowRigging="1" CPL5Lo="0" Type="V-Series" SW2Subs="0" Delay="0.0062" Mono="0" DefaultDevice="7" CPL5Mid="0" CompressionModeEnabled="0" Mirror="0" SW1Subs="0" SW1Tops="1" ArraySightEnabled="0" LinkMode="0" Mounting="flown" StackedFrameAngle="0" ArrayProcessingEnabled="0" HorizontalAiming="-30" TestPointIndex="0" CompressionForce="2452.5" ArrayProcessingSlotIndex="0" DefaultSubnet="0">
+        <Origin x="30" z="10.5" y="-12"/>
+        <FlyingFrame RearPickpointHole="39" LoadBeamPosition="" FrameAngle="-1.7" FrontPickpointHole="0" SinglePickpointHole="21.5"/>
+        <Box Mute="0" Level="0" SplayAngle="0" RotationAngle="0" SW5="0" Name="V8" SW3="-1" Delay="0.0062" ControllerType="1" SW1="1" HorizontalAngle="-30" SW4="0" SW2="0" Linked="0" PivotAngle="0" TestPointIndex="0" CabinetsPerPosition="1" VerticalAngle="-1.7">
+            <Origin x="29.98954513721445" z="10.4303274722325" y="-11.99396388215642"/>
+            <AmplifierChannel Device="7" InputSource="0" Subnet="0" Name="Outfill 1 0.07" OutputMode="0" Channel="1" Type="D80" InputType="4" ChannelName="Delay1 01+02L"/>
+        </Box>
+        <Box Mute="0" Level="0" SplayAngle="3" RotationAngle="0" SW5="0" Name="V8" SW3="-1" Delay="0.0062" ControllerType="1" SW1="1" HorizontalAngle="-30" SW4="0" SW2="0" Linked="1" PivotAngle="0" TestPointIndex="0" CabinetsPerPosition="1" VerticalAngle="-4.699999999999999">
+            <Origin x="29.98156785784005" z="10.11996413566543" y="-11.98935819776221"/>
+            <AmplifierChannel Device="7" InputSource="0" Subnet="0" Name="Outfill 1 0.07" OutputMode="0" Channel="1" Type="D80" InputType="4" ChannelName="Delay1 01+02L"/>
+        </Box>
+        <Box Mute="0" Level="0" SplayAngle="3" RotationAngle="0" SW5="0" Name="V8" SW3="-1" Delay="0.0062" ControllerType="1" SW1="1" HorizontalAngle="-30" SW4="0" SW2="0" Linked="0" PivotAngle="0" TestPointIndex="0" CabinetsPerPosition="1" VerticalAngle="-7.699999999999999">
+            <Origin x="29.95953452011827" z="9.810508227058426" y="-11.97663724429739"/>
+            <AmplifierChannel Device="7" InputSource="0" Subnet="0" Name="Outfill 1 0.07" OutputMode="0" Channel="2" Type="D80" InputType="4" ChannelName="Delay1 03+04L"/>
+        </Box>
+        <Box Mute="0" Level="0" SplayAngle="4" RotationAngle="0" SW5="0" Name="V8" SW3="-1" Delay="0.0062" ControllerType="1" SW1="1" HorizontalAngle="-30" SW4="0" SW2="0" Linked="1" PivotAngle="0" TestPointIndex="0" CabinetsPerPosition="1" VerticalAngle="-11.7">
+            <Origin x="29.9235055158963" z="9.502807943546969" y="-11.9558358890112"/>
+            <AmplifierChannel Device="7" InputSource="0" Subnet="0" Name="Outfill 1 0.07" OutputMode="0" Channel="2" Type="D80" InputType="4" ChannelName="Delay1 03+04L"/>
+        </Box>
+        <Box Mute="0" Level="0" SplayAngle="5" RotationAngle="0" SW5="0" Name="V8" SW3="-1" Delay="0.0062" ControllerType="1" SW1="1" HorizontalAngle="-30" SW4="0" SW2="0" Linked="0" PivotAngle="0" TestPointIndex="0" CabinetsPerPosition="1" VerticalAngle="-16.7">
+            <Origin x="29.86897583212515" z="9.198759260848911" y="-11.92435316140711"/>
+            <AmplifierChannel Device="7" InputSource="0" Subnet="0" Name="Outfill 1 0.07" OutputMode="0" Channel="3" Type="D80" InputType="4" ChannelName="Delay1 05+06L"/>
+        </Box>
+        <Box Mute="0" Level="0" SplayAngle="7" RotationAngle="0" SW5="0" Name="V8" SW3="-1" Delay="0.0062" ControllerType="1" SW1="1" HorizontalAngle="-30" SW4="0" SW2="0" Linked="1" PivotAngle="0" TestPointIndex="0" CabinetsPerPosition="1" VerticalAngle="-23.7">
+            <Origin x="29.79170433319732" z="8.90135537619944" y="-11.87974044070044"/>
+            <AmplifierChannel Device="7" InputSource="0" Subnet="0" Name="Outfill 1 0.07" OutputMode="0" Channel="3" Type="D80" InputType="4" ChannelName="Delay1 05+06L"/>
+        </Box>
+        <Box Mute="0" Level="0" SplayAngle="8" RotationAngle="0" SW5="0" Name="V8" SW3="-1" Delay="0.0062" ControllerType="1" SW1="1" HorizontalAngle="-30" SW4="0" SW2="0" Linked="0" PivotAngle="0" TestPointIndex="0" CabinetsPerPosition="1" VerticalAngle="-31.7">
+            <Origin x="29.68362021917512" z="8.617042140967506" y="-11.8173380483746"/>
+            <AmplifierChannel Device="7" InputSource="0" Subnet="0" Name="Outfill 1 0.07" OutputMode="0" Channel="4" Type="D80" InputType="4" ChannelName="Delay1 07+08L"/>
+        </Box>
+        <Box Mute="0" Level="0" SplayAngle="10" RotationAngle="0" SW5="0" Name="V8" SW3="-1" Delay="0.0062" ControllerType="1" SW1="1" HorizontalAngle="-30" SW4="0" SW2="0" Linked="1" PivotAngle="0" TestPointIndex="0" CabinetsPerPosition="1" VerticalAngle="-41.7">
+            <Origin x="29.54232042564861" z="8.352865291491337" y="-11.73575857454563"/>
+            <AmplifierChannel Device="7" InputSource="0" Subnet="0" Name="Outfill 1 0.07" OutputMode="0" Channel="4" Type="D80" InputType="4" ChannelName="Delay1 07+08L"/>
+        </Box>
+        <ArrayProcessingSlotSettings Temperature="293.16" VenueSessionId="1654712842050" Comment="This slot is reserved for bypassing ArrayProcessing." CreatedOn="1970-01-01T01:00:00" Humidity="60" PowerGlory="0.5" Name="Bypass" SessionIdSecond="0" SlotNumber="1" SelectedPlaneId="1" Flags="1" SessionIdFirst="0">
+            <TargetProfile/>
+            <Slopes Slope1="0" Slope2="-3" Slope3="-3"/>
+            <Distances Distance2="42.90492293378227" Distance1="8.280636065532363"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" VenueSessionId="1654712842050" Comment="" CreatedOn="1970-01-01T01:00:00" Humidity="60" PowerGlory="0.5" Name="" SessionIdSecond="0" SlotNumber="2" SelectedPlaneId="0" Flags="1" SessionIdFirst="0">
+            <TargetProfile/>
+            <Slopes Slope1="0" Slope2="-3" Slope3="-3"/>
+            <Distances Distance2="0" Distance1="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" VenueSessionId="1654712842050" Comment="" CreatedOn="1970-01-01T01:00:00" Humidity="60" PowerGlory="0.5" Name="" SessionIdSecond="0" SlotNumber="3" SelectedPlaneId="0" Flags="1" SessionIdFirst="0">
+            <TargetProfile/>
+            <Slopes Slope1="0" Slope2="-3" Slope3="-3"/>
+            <Distances Distance2="0" Distance1="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" VenueSessionId="1654712842050" Comment="" CreatedOn="1970-01-01T01:00:00" Humidity="60" PowerGlory="0.5" Name="" SessionIdSecond="0" SlotNumber="4" SelectedPlaneId="0" Flags="1" SessionIdFirst="0">
+            <TargetProfile/>
+            <Slopes Slope1="0" Slope2="-3" Slope3="-3"/>
+            <Distances Distance2="0" Distance1="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" VenueSessionId="1654712842050" Comment="" CreatedOn="1970-01-01T01:00:00" Humidity="60" PowerGlory="0.5" Name="" SessionIdSecond="0" SlotNumber="5" SelectedPlaneId="0" Flags="1" SessionIdFirst="0">
+            <TargetProfile/>
+            <Slopes Slope1="0" Slope2="-3" Slope3="-3"/>
+            <Distances Distance2="0" Distance1="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" VenueSessionId="1654712842050" Comment="" CreatedOn="1970-01-01T01:00:00" Humidity="60" PowerGlory="0.5" Name="" SessionIdSecond="0" SlotNumber="6" SelectedPlaneId="0" Flags="1" SessionIdFirst="0">
+            <TargetProfile/>
+            <Slopes Slope1="0" Slope2="-3" Slope3="-3"/>
+            <Distances Distance2="0" Distance1="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" VenueSessionId="1654712842050" Comment="" CreatedOn="1970-01-01T01:00:00" Humidity="60" PowerGlory="0.5" Name="" SessionIdSecond="0" SlotNumber="7" SelectedPlaneId="0" Flags="1" SessionIdFirst="0">
+            <TargetProfile/>
+            <Slopes Slope1="0" Slope2="-3" Slope3="-3"/>
+            <Distances Distance2="0" Distance1="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" VenueSessionId="1654712842050" Comment="" CreatedOn="1970-01-01T01:00:00" Humidity="60" PowerGlory="0.5" Name="" SessionIdSecond="0" SlotNumber="8" SelectedPlaneId="0" Flags="1" SessionIdFirst="0">
+            <TargetProfile/>
+            <Slopes Slope1="0" Slope2="-3" Slope3="-3"/>
+            <Distances Distance2="0" Distance1="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" VenueSessionId="1654712842050" Comment="" CreatedOn="1970-01-01T01:00:00" Humidity="60" PowerGlory="0.5" Name="" SessionIdSecond="0" SlotNumber="9" SelectedPlaneId="0" Flags="1" SessionIdFirst="0">
+            <TargetProfile/>
+            <Slopes Slope1="0" Slope2="-3" Slope3="-3"/>
+            <Distances Distance2="0" Distance1="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" VenueSessionId="1654712842050" Comment="" CreatedOn="1970-01-01T01:00:00" Humidity="60" PowerGlory="0.5" Name="" SessionIdSecond="0" SlotNumber="10" SelectedPlaneId="0" Flags="1" SessionIdFirst="0">
+            <TargetProfile/>
+            <Slopes Slope1="0" Slope2="-3" Slope3="-3"/>
+            <Distances Distance2="0" Distance1="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+    </MainArray>
+    <MainArray Mute="0" Name="Delay1" CPL="-1" ShowRigging="1" CPL5Lo="0" Type="V-Series" SW2Subs="0" Delay="0.0062" Mono="0" DefaultDevice="7" CPL5Mid="0" CompressionModeEnabled="0" Mirror="0" SW1Subs="0" SW1Tops="1" ArraySightEnabled="0" LinkMode="0" Mounting="flown" StackedFrameAngle="0" ArrayProcessingEnabled="0" HorizontalAiming="30" TestPointIndex="0" CompressionForce="2452.5" ArrayProcessingSlotIndex="0" DefaultSubnet="0">
+        <Origin x="30" z="10.5" y="12"/>
+        <FlyingFrame RearPickpointHole="39" LoadBeamPosition="" FrameAngle="-1.7" FrontPickpointHole="0" SinglePickpointHole="21.5"/>
+        <Box Mute="0" Level="0" SplayAngle="0" RotationAngle="0" SW5="0" Name="V8" SW3="-1" Delay="0.0062" ControllerType="1" SW1="1" HorizontalAngle="30" SW4="0" SW2="0" Linked="0" PivotAngle="0" TestPointIndex="0" CabinetsPerPosition="1" VerticalAngle="-1.7">
+            <Origin x="29.98954513721445" z="10.4303274722325" y="11.99396388215642"/>
+            <AmplifierChannel Device="8" InputSource="0" Subnet="0" Name="Outfill 1 0.08" OutputMode="0" Channel="1" Type="D80" InputType="4" ChannelName="Delay1 01+02R"/>
+        </Box>
+        <Box Mute="0" Level="0" SplayAngle="3" RotationAngle="0" SW5="0" Name="V8" SW3="-1" Delay="0.0062" ControllerType="1" SW1="1" HorizontalAngle="30" SW4="0" SW2="0" Linked="1" PivotAngle="0" TestPointIndex="0" CabinetsPerPosition="1" VerticalAngle="-4.699999999999999">
+            <Origin x="29.98156785784005" z="10.11996413566543" y="11.98935819776221"/>
+            <AmplifierChannel Device="8" InputSource="0" Subnet="0" Name="Outfill 1 0.08" OutputMode="0" Channel="1" Type="D80" InputType="4" ChannelName="Delay1 01+02R"/>
+        </Box>
+        <Box Mute="0" Level="0" SplayAngle="3" RotationAngle="0" SW5="0" Name="V8" SW3="-1" Delay="0.0062" ControllerType="1" SW1="1" HorizontalAngle="30" SW4="0" SW2="0" Linked="0" PivotAngle="0" TestPointIndex="0" CabinetsPerPosition="1" VerticalAngle="-7.699999999999999">
+            <Origin x="29.95953452011827" z="9.810508227058426" y="11.97663724429739"/>
+            <AmplifierChannel Device="8" InputSource="0" Subnet="0" Name="Outfill 1 0.08" OutputMode="0" Channel="2" Type="D80" InputType="4" ChannelName="Delay1 03+04R"/>
+        </Box>
+        <Box Mute="0" Level="0" SplayAngle="4" RotationAngle="0" SW5="0" Name="V8" SW3="-1" Delay="0.0062" ControllerType="1" SW1="1" HorizontalAngle="30" SW4="0" SW2="0" Linked="1" PivotAngle="0" TestPointIndex="0" CabinetsPerPosition="1" VerticalAngle="-11.7">
+            <Origin x="29.9235055158963" z="9.502807943546969" y="11.9558358890112"/>
+            <AmplifierChannel Device="8" InputSource="0" Subnet="0" Name="Outfill 1 0.08" OutputMode="0" Channel="2" Type="D80" InputType="4" ChannelName="Delay1 03+04R"/>
+        </Box>
+        <Box Mute="0" Level="0" SplayAngle="5" RotationAngle="0" SW5="0" Name="V8" SW3="-1" Delay="0.0062" ControllerType="1" SW1="1" HorizontalAngle="30" SW4="0" SW2="0" Linked="0" PivotAngle="0" TestPointIndex="0" CabinetsPerPosition="1" VerticalAngle="-16.7">
+            <Origin x="29.86897583212515" z="9.198759260848911" y="11.92435316140711"/>
+            <AmplifierChannel Device="8" InputSource="0" Subnet="0" Name="Outfill 1 0.08" OutputMode="0" Channel="3" Type="D80" InputType="4" ChannelName="Delay1 05+06R"/>
+        </Box>
+        <Box Mute="0" Level="0" SplayAngle="7" RotationAngle="0" SW5="0" Name="V8" SW3="-1" Delay="0.0062" ControllerType="1" SW1="1" HorizontalAngle="30" SW4="0" SW2="0" Linked="1" PivotAngle="0" TestPointIndex="0" CabinetsPerPosition="1" VerticalAngle="-23.7">
+            <Origin x="29.79170433319732" z="8.90135537619944" y="11.87974044070044"/>
+            <AmplifierChannel Device="8" InputSource="0" Subnet="0" Name="Outfill 1 0.08" OutputMode="0" Channel="3" Type="D80" InputType="4" ChannelName="Delay1 05+06R"/>
+        </Box>
+        <Box Mute="0" Level="0" SplayAngle="8" RotationAngle="0" SW5="0" Name="V8" SW3="-1" Delay="0.0062" ControllerType="1" SW1="1" HorizontalAngle="30" SW4="0" SW2="0" Linked="0" PivotAngle="0" TestPointIndex="0" CabinetsPerPosition="1" VerticalAngle="-31.7">
+            <Origin x="29.68362021917512" z="8.617042140967506" y="11.8173380483746"/>
+            <AmplifierChannel Device="8" InputSource="0" Subnet="0" Name="Outfill 1 0.08" OutputMode="0" Channel="4" Type="D80" InputType="4" ChannelName="Delay1 07+08R"/>
+        </Box>
+        <Box Mute="0" Level="0" SplayAngle="10" RotationAngle="0" SW5="0" Name="V8" SW3="-1" Delay="0.0062" ControllerType="1" SW1="1" HorizontalAngle="30" SW4="0" SW2="0" Linked="1" PivotAngle="0" TestPointIndex="0" CabinetsPerPosition="1" VerticalAngle="-41.7">
+            <Origin x="29.54232042564861" z="8.352865291491337" y="11.73575857454563"/>
+            <AmplifierChannel Device="8" InputSource="0" Subnet="0" Name="Outfill 1 0.08" OutputMode="0" Channel="4" Type="D80" InputType="4" ChannelName="Delay1 07+08R"/>
+        </Box>
+        <ArrayProcessingSlotSettings Temperature="293.16" VenueSessionId="1654712842060" Comment="This slot is reserved for bypassing ArrayProcessing." CreatedOn="1970-01-01T01:00:00" Humidity="60" PowerGlory="0.5" Name="Bypass" SessionIdSecond="0" SlotNumber="1" SelectedPlaneId="1" Flags="1" SessionIdFirst="0">
+            <TargetProfile/>
+            <Slopes Slope1="0" Slope2="-3" Slope3="-3"/>
+            <Distances Distance2="0" Distance1="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" VenueSessionId="1654712842060" Comment="" CreatedOn="1970-01-01T01:00:00" Humidity="60" PowerGlory="0.5" Name="" SessionIdSecond="0" SlotNumber="2" SelectedPlaneId="0" Flags="1" SessionIdFirst="0">
+            <TargetProfile/>
+            <Slopes Slope1="0" Slope2="-3" Slope3="-3"/>
+            <Distances Distance2="0" Distance1="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" VenueSessionId="1654712842060" Comment="" CreatedOn="1970-01-01T01:00:00" Humidity="60" PowerGlory="0.5" Name="" SessionIdSecond="0" SlotNumber="3" SelectedPlaneId="0" Flags="1" SessionIdFirst="0">
+            <TargetProfile/>
+            <Slopes Slope1="0" Slope2="-3" Slope3="-3"/>
+            <Distances Distance2="0" Distance1="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" VenueSessionId="1654712842060" Comment="" CreatedOn="1970-01-01T01:00:00" Humidity="60" PowerGlory="0.5" Name="" SessionIdSecond="0" SlotNumber="4" SelectedPlaneId="0" Flags="1" SessionIdFirst="0">
+            <TargetProfile/>
+            <Slopes Slope1="0" Slope2="-3" Slope3="-3"/>
+            <Distances Distance2="0" Distance1="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" VenueSessionId="1654712842060" Comment="" CreatedOn="1970-01-01T01:00:00" Humidity="60" PowerGlory="0.5" Name="" SessionIdSecond="0" SlotNumber="5" SelectedPlaneId="0" Flags="1" SessionIdFirst="0">
+            <TargetProfile/>
+            <Slopes Slope1="0" Slope2="-3" Slope3="-3"/>
+            <Distances Distance2="0" Distance1="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" VenueSessionId="1654712842060" Comment="" CreatedOn="1970-01-01T01:00:00" Humidity="60" PowerGlory="0.5" Name="" SessionIdSecond="0" SlotNumber="6" SelectedPlaneId="0" Flags="1" SessionIdFirst="0">
+            <TargetProfile/>
+            <Slopes Slope1="0" Slope2="-3" Slope3="-3"/>
+            <Distances Distance2="0" Distance1="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" VenueSessionId="1654712842060" Comment="" CreatedOn="1970-01-01T01:00:00" Humidity="60" PowerGlory="0.5" Name="" SessionIdSecond="0" SlotNumber="7" SelectedPlaneId="0" Flags="1" SessionIdFirst="0">
+            <TargetProfile/>
+            <Slopes Slope1="0" Slope2="-3" Slope3="-3"/>
+            <Distances Distance2="0" Distance1="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" VenueSessionId="1654712842060" Comment="" CreatedOn="1970-01-01T01:00:00" Humidity="60" PowerGlory="0.5" Name="" SessionIdSecond="0" SlotNumber="8" SelectedPlaneId="0" Flags="1" SessionIdFirst="0">
+            <TargetProfile/>
+            <Slopes Slope1="0" Slope2="-3" Slope3="-3"/>
+            <Distances Distance2="0" Distance1="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" VenueSessionId="1654712842060" Comment="" CreatedOn="1970-01-01T01:00:00" Humidity="60" PowerGlory="0.5" Name="" SessionIdSecond="0" SlotNumber="9" SelectedPlaneId="0" Flags="1" SessionIdFirst="0">
+            <TargetProfile/>
+            <Slopes Slope1="0" Slope2="-3" Slope3="-3"/>
+            <Distances Distance2="0" Distance1="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+        <ArrayProcessingSlotSettings Temperature="293.16" VenueSessionId="1654712842060" Comment="" CreatedOn="1970-01-01T01:00:00" Humidity="60" PowerGlory="0.5" Name="" SessionIdSecond="0" SlotNumber="10" SelectedPlaneId="0" Flags="1" SessionIdFirst="0">
+            <TargetProfile/>
+            <Slopes Slope1="0" Slope2="-3" Slope3="-3"/>
+            <Distances Distance2="0" Distance1="0"/>
+            <PlaneOffsets/>
+        </ArrayProcessingSlotSettings>
+    </MainArray>
+</MainArrays>

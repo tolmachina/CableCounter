@@ -1,9 +1,11 @@
 import os
 import sys
-from __init__ import *
+from CableCounter import *
 """
 Run the app as CLI
 """
+
+
 def main():
     # path = input("Input path to pdf file to scan? \n")
     """
@@ -30,7 +32,7 @@ def main():
 
     for i in range(1, len(sys.argv) - 1):
         data = get_data_pdf(sys.argv[i])
-        results = get_cable_number(data)
+        results = get_cables_amounts(data)
         print(results)
         with open(sys.argv[-1], 'a') as f:
             w = csv.writer(f)

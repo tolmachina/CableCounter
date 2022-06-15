@@ -6,7 +6,7 @@ from backend import CableCounter as cc
 
 SECRET_KEY = "4800188e5667c9fe099638602cd209752bd8a01bf7a5dc3c53aaa6d5afcce214"
 UPLOAD_FOLDER = os.path.join('uploaded_by_user') 
-ALLOWED_EXTENSIONS= {'pdf', 'csv', 'xlsx', 'dbea', 'dbep', 'dbesa', 'dbacv'}
+ALLOWED_EXTENSIONS= {'csv', 'xlsx', 'dbea'}
 
 
 application = Flask(__name__)
@@ -37,7 +37,6 @@ def upload_file():
             return redirect(request.url)
         
         if file_speaker and allowed_file(file_speaker.filename) and file_anchor and allowed_file(file_anchor.filename):
-        
             data = process_files(file_speaker, file_anchor)
             print("FINAL DATA", data)
             return render_template('result.html', jsonfile=json.dumps(data))
@@ -66,7 +65,7 @@ def process_files(speaker_file, anchor_file):
 
         processed_speaker_file = cc.get_data_dbea(filename_speaker, filename_anchor)
         print("Proccesd dbea file\n", processed_speaker_file, "\n")
-        data = cc.get_cable_number(processed_speaker_file)
+        data = cc.get_cables_amounts(processed_speaker_file)
         print("Get cable number result", data)
         if os.path.exists(filename_speaker):
             os.remove(filename_speaker)
@@ -82,7 +81,7 @@ def process_files(speaker_file, anchor_file):
         file_pdf.save(filename_pdf)
         file_anchor.save(filename_anchor)
 
-        data = cc.get_cable_number(cc.get_data_pdf(filepath= filename_pdf, anchors_file_path= filename_anchor))
+        data = cc.get_cables_amounts(cc.get_data_pdf(filepath= filename_pdf, anchors_file_path= filename_anchor))
         if os.path.exists(filename_pdf):
             os.remove(filename_pdf)
         else:
