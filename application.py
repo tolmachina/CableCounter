@@ -1,6 +1,5 @@
 import os
 from flask import Flask, render_template, flash, request, redirect, send_from_directory, json
-from numpy import int64
 from werkzeug.utils import secure_filename
 from backend import CableCounter as cc
 

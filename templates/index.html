@@ -5,10 +5,10 @@
 {% endblock %}
 
 {% block main %}
-<div>
-    <h1>If you have setup data ready:</h1>
-    <div>
-        <h1>Upload your array.dbea and cablerun.csv files</h1>
+<div style="text-align: center">
+    <h1>Count your cables for d&b audio arrays</h1>
+    <div >
+        <h5>Upload your array.dbea and cablerun.csv files</h5>
         <form method=post enctype=multipart/form-data>
             <label for="setup_file">Select an array setup file:</label>
             <input type="file" id = "setup_file" name="file_speaker">
@@ -20,25 +20,27 @@
          </form>
          
     </div>
-    <div>
-        Create a .csv file with points of your cable run to the array. 
-        Each point must be on a new line in a format x, y, z coordinates in meters.
-        Firts point must be the position of amps.
-        For example:
-            <p>0,0,0</p>
-            <p>0,10,0</p>
-            <p>2,10,0</p>
-            <p>2,10,6</p>
-        <p>Would describe a cable run from amps at x=0, y=0 and z=0. Cable run goes 10 meters
-        side of stage, until next junction, then 2 meters forward, then gets to the array 
-        and goes 6 meters up in "z" plane to reach speakers.</p>
-    </div>
-        <div>
+    <div style="text-align: left">
+        <p>
+            Create a .csv file with points of your cable run to the array. 
+            Each point must be on a new line in a format x, y, z coordinates in meters.
+            Points are relavent to the plane in your ArrayCalc project
+            Firts point must be the position of amps.
+            For example:
+                <p>0,3,0</p>
+                <p>0,10,0</p>
+                <p>2,10,0</p>
+                <p>2,10,6</p>
+            <p>Would describe a cable run from amps at x=0, y=3 and z=0. Cable run goes 7 meters
+            side of stage, until next junction, then 2 meters forward, then gets to the array 
+            and goes 6 meters up in "z" plane to reach speakers.</p>
+        </p>
+        <p>
             Export .dbea file from ArrayCalc. Right click on your array and choose export.
-        </div>   
-    <div>
-        Upload both files.
-
+        </p>
+        <p>
+            Upload both files.
+        </p>
     </div>
 </div>
 {% endblock %}
