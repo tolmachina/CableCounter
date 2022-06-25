@@ -20,21 +20,25 @@
          </form>
          
     </div>
-<div>
-    - Create a .csv file with points of your cable run to the array. 
-      Each point must be on a new line in a format x, y, z coordinates in meters.
-      Firts point must be position of amps.
-      For example:
-      0,0,0
-      0,10,0
-      2,10,0
-      2,10,6
-      Would describe a cable run from amps at x=0, y=0 and z=0. Cable run goes 10 meters
-      side of stage, until next junction, then 2 meters forward, then gets to the array 
-      and goes 6 meters up in "z" plane to reach speakers.
-    - Export .dbea file from ArrayCalc. Right click on your array and choose export.
-    - Upload both files.
-    
-</div>
+    <div>
+        Create a .csv file with points of your cable run to the array. 
+        Each point must be on a new line in a format x, y, z coordinates in meters.
+        Firts point must be the position of amps.
+        For example:
+            <p>0,0,0</p>
+            <p>0,10,0</p>
+            <p>2,10,0</p>
+            <p>2,10,6</p>
+        <p>Would describe a cable run from amps at x=0, y=0 and z=0. Cable run goes 10 meters
+        side of stage, until next junction, then 2 meters forward, then gets to the array 
+        and goes 6 meters up in "z" plane to reach speakers.</p>
+    </div>
+        <div>
+            Export .dbea file from ArrayCalc. Right click on your array and choose export.
+        </div>   
+    <div>
+        Upload both files.
+
+    </div>
 </div>
 {% endblock %}
